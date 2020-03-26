@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Калькулятор КУП для пайщика</title>
 
     <style>
 
@@ -38,9 +38,16 @@
     <!-- </div> -->
 
   
-    <div class="container mt-3">
-      <div class="row">    
-	<div class="col-md">
+<div class="container mt-3">
+      <div class="row">
+	<div class="col">
+
+	<div class="card bg-primary mb-3">
+	    <div class="card-header">
+    	      <img src="https://kopikupi.ru/static/media/logo.25b257c1.svg" class="mx-auto d-block" alt="logo">
+	      </div>
+	    </div>
+
 
 	  <div class="card border-primary mb-3">
 	    <div class="card-header">
@@ -55,7 +62,7 @@
 	    </div>
 	    <div class="card-body text-primary">
 	      <h2 class="card-title">123 456,78</h2>
-	      <small class="card-text text-muted">Общая сумма накоплений</small>
+	      <small class="card-text text-muted ">Общая сумма накоплений</small>
 	      <hr>
 	      <h2 class="card-title">112,50</h2>
 	      <small class="card-text text-muted">ЕКУП — ежедневный коэффициент участия Пайщика</small>
@@ -69,68 +76,426 @@
 	      <h2 class="card-title">13 750,00</h2>
 	      <small class="card-text text-muted">Ежемесячный взнос</small>
 
+
+
+	      
 	    </div>
 	  </div>
+
+
+
 	</div>
+
+
 
 	<div class="col-md">
 	  <div class="card border-secondary mb-3">
 	    <div class="card-header">Исходные данные</div>
 	    <div class="card-body text-secondary">
 
+	      
+
 
 
 <form>
   <div class="form-group">
     <label for="formGroupExampleInput">Сумма займа</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Рубль">
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Рубли">
   </div>
 
   <div class="form-group">
     <label for="formGroupExampleInput">Срок займа</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Месяц">
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Месяцы">
   </div>
 
   <div class="form-group">
     <label for="formGroupExampleInput2">Узнать КУПы и ЕКУПы на:</label>
     <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Дата">
   </div>
+
+
+<label for="formGroupExampleInput2">Транзакции <span class="badge badge-secondary align-top">Кол-во дней: 252</span></label>
+
+
+
+
+
+  <div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№1</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№2</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№3</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№4</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№5</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+  <div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№1</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№2</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№3</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№4</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№5</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+  <div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№1</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№2</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№3</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№4</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№5</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+  <div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№1</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№2</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№3</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№4</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№5</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+<div class="input-group mb-1">
+  <div class="input-group-prepend">
+    <span class="input-group-text">№6</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" placeholder="Сумма">
+  <input type="text" aria-label="Last name" class="form-control" placeholder="Дата">
+</div>
+
+
 </form>
-<hr>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Транзакция №1</span>
-  </div>
-  <input type="text" aria-label="First name" class="form-control"" placeholder="Сумма">
-  <input type="text" aria-label="Last name" class="form-control"" placeholder="Дата">
-</div>
 
-<div class="accordion" id="accordionExample">
-<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-         Добавить Транзакции
-        </button>    
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-	
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Транзакция №1</span>
-  </div>
-  <input type="text" aria-label="First name" class="form-control"" placeholder="Сумма">
-  <input type="text" aria-label="Last name" class="form-control"" placeholder="Дата">
-</div>
 
-  </div>
-       
+
+
+	  </div>
+	</div>
       </div>
     </div>
-
-  
-	    </div>
-	  </div>
-
-	</div>
-	</div>
-
+    
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

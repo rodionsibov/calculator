@@ -1,3 +1,3 @@
 # calculator
 Calculator app
-![preview-app](preview.jpg)
+![preview-app](./preview.jpg)

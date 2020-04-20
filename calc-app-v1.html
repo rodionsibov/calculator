@@ -21,7 +21,6 @@
 	  font-family: 'Roboto', sans-serif;
 	  text-align: center;
 	  font-size: 4vh;
-
 	  margin: 0 auto;
 	  width: 80%;
       }
@@ -59,9 +58,11 @@
 
 
       button {
-	  margin: 30px 0 30px 0;
-	  padding: 20px;
-	  width: 200px;
+	  margin-top: 30px;
+	  bottom: 0px;
+	  
+	  padding: 20px 25px;
+	  
 	  border: none;
 	  cursor: pointer;
 	  font-size: inherit;
@@ -96,7 +97,7 @@
 	  opacity: 1;
       }
 
-      h3, .rq1 {
+      h3, .rq1, .rq2 {
 
 	  width: 100%;
 	  padding: 20px 0 0 0;
@@ -183,14 +184,25 @@
     <div class="q2">
     <h2>When do you want to get them?</h2>
 
-    <h3 class="rq2">34534535</h3>
-    
-    
     <form>
-      <input type="range" id="rq2" name="vol" min="0" max="50" value="12345">
+      <input class="rq2" type="number">
 
+      <input type="range"
+
+
+	     onclick="myFunction()"
+	     ontouchmove="myFunction()"
+	     ontouchstart="myFunction()"
+	     onmousemove="myFunction()"
+
+
+
+
+	     id="rq2" min="1000" max="500000" value="500">
     </form>
-    <button>Next</button>
+    <button onclick="goBack()">Back</button>
+    <button onclick="goNextLast()">Next</button>
+
 
     </div>
 
@@ -208,7 +220,8 @@
     <h3>34534535</h3>
     <p>Every month contribution</p>
 
-    <button>Back</button>
+    <button onclick="goBackFirst()">Back</button>
+
     </div>
 
     
@@ -221,19 +234,47 @@
       <script>
 
 	document.querySelector('.rq1').innerHTML = document.querySelector('#rq1').value;
-	document.querySelector('input').value = document.querySelector('#rq1').value;
+	document.querySelectorAll('input')[0].value = document.querySelector('#rq1').value;
 	document.querySelector('#rq1').step = '100';
 	
-	function myFunction() {
+	document.querySelector('.rq2').innerHTML = document.querySelector('#rq2').value;
+	document.querySelectorAll('input')[2].value = document.querySelector('#rq2').value;
 
-	    let x = document.querySelector('#rq1').value
-	    console.log(x);
+	document.querySelector('#rq1').step = '100';
+
+
+	function myFunction() {
+	    document.querySelector('.rq1').value = document.querySelector('#rq1').value;
 	    
-	    
-	    document.querySelector('.rq1').value = x;
+	    document.querySelector('.rq2').value = document.querySelector('#rq2').value;
+
 
 	}
 
+
+
+
+
+	
+
+	const goBack = () => {
+	    document.querySelector('.q2').style.display = 'none'
+	    document.querySelector('.q1').style.display = 'initial'
+	    
+	}
+	
+	const goBackFirst = () => {
+	    document.querySelector('.sum').style.display = 'none'
+	    document.querySelector('.q1').style.display = 'initial'
+	    
+	}
+	const goNextLast = () => {
+	    document.querySelector('.q2').style.display = 'none'
+	    document.querySelector('.sum').style.display = 'initial'
+	    
+	}
+
+	
 	const goNext = () => {
 	    document.querySelector('.q1').style.display = 'none'
 	    document.querySelector('.q2').style.display = 'initial'

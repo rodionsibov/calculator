@@ -19,9 +19,9 @@
       body {
 
 	  font-family: 'Roboto', sans-serif;
-
+	  text-align: center;
 	  font-size: 4vh;
-	  padding: 20px;
+
 	  margin: 0 auto;
 	  width: 80%;
       }
@@ -51,11 +51,15 @@
       }
 
       p {
+	  color: gray;
+	  width: 100%;
+
 	  margin: 0;  
       }
 
+
       button {
-	  margin-top: 30px;
+	  margin: 30px 0 30px 0;
 	  padding: 20px;
 	  width: 200px;
 	  border: none;
@@ -70,40 +74,58 @@
       
       form {
 	  margin-top: 30px;
-	  width: 300px;
+	  width: 100%;
       }
       
       input {
 	  width: 100%;
+	  border: none;
+	  text-align: center;
+	  font-family: inherit;
       }
 
       .set {
-	  margin-top: 30px;
+	  position: fixed;
+	  top: 10px;
+	  right: 10px;
+	  width: 100px;
+	  height: 100px;
 	  font-size: 3vh;
       }
 
-      h3 {
+      h3, .rq1 {
 
+	  width: 100%;
+	  padding: 20px 0 0 0;
 	  font-weight: lighter;
-	  color: lightgray;
 	  font-size: 10vh;
       }
+
       
       h1 {
-	  margin-bottom: 20px;
+	  
+	  margin-bottom: 10px;
       }
       
       .choose {
-
+	  padding: 20px;
+	  border-left: 8px solid gray;
+	  text-align: left;
 	  background: whitesmoke;
-	  padding: 30px;
-	  margin-bottom: 100px;
+	  margin: 50px 0 50px 0;
       }
 
       .q1 {
 	  display: initial;
       }
 
+      .q2 {
+	  display: none;
+      }
+
+      .sum {
+	  display: none;
+      }
 
 
 
@@ -135,10 +157,21 @@
     <div class="q1">
     <h2>How much money do you need?</h2>
 
-    <h3 class="rq1">34534535</h3>
-
     <form>
-      <input type="range" onclick="myFunction()" id="rq1" value="15">
+      <input class="rq1" type="number">
+
+      <input type="range"
+
+
+	     onclick="myFunction()"
+	     ontouchmove="myFunction()"
+	     ontouchstart="myFunction()"
+	     onmousemove="myFunction()"
+
+
+
+
+	     id="rq1" min="1000" max="500000" value="10000">
 
     </form>
     <button>Next</button>
@@ -148,7 +181,7 @@
     <h2>When do you want to get them?</h2>
 
     <h3 class="rq2">34534535</h3>
-
+    
     
     <form>
       <input type="range" id="rq2" name="vol" min="0" max="50" value="12345">
@@ -184,12 +217,19 @@
       
       <script>
 
+	document.querySelector('.rq1').innerHTML = document.querySelector('#rq1').value;
+	
+	document.querySelector('input').value = document.querySelector('#rq1').value;
+
+	document.querySelector('#rq1').step = '100';
+	
 	function myFunction() {
 
-	let x = document.querySelector('#rq1').value
-	console.log(x);
-
-	document.querySelector('.rq1').innerHTML = x;
+	    let x = document.querySelector('#rq1').value
+	    console.log(x);
+	    
+	    
+	    document.querySelector('.rq1').innerHTML = x;
 
 	}
 

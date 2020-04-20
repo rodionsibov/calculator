@@ -5,14 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
-    <title>Калькулятор КУП для пайщика</title>
+    <title>Calculator CUP for Shareholder</title>
 
     <style>
 
+      @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+      * {
+	  margin: 0;
+      }
+      
       body {
+
+	  font-family: 'Roboto', sans-serif;
+
 	  font-size: 4vh;
-	  font-family: sans;
 	  padding: 20px;
+	  margin: 0 auto;
+	  width: 80%;
       }
 
 
@@ -35,9 +46,68 @@
 	  opacity: 0;
       }
       
+      h2, h3 {
+	  margin-top: 40px;
+      }
+
+      p {
+	  margin: 0;  
+      }
+
+      button {
+	  margin-top: 30px;
+	  padding: 20px;
+	  width: 200px;
+	  border: none;
+	  cursor: pointer;
+	  font-size: inherit;
+	  
+      }
+
+      button:hover {
+	  filter: brightness(1.02)
+      }
+      
+      form {
+	  margin-top: 30px;
+	  width: 300px;
+      }
+      
+      input {
+	  width: 100%;
+      }
+
+      .set {
+	  margin-top: 30px;
+	  font-size: 3vh;
+      }
+
+      h3 {
+
+	  font-weight: lighter;
+	  color: lightgray;
+	  font-size: 10vh;
+      }
+      
+      h1 {
+	  margin-bottom: 20px;
+      }
+      
+      .choose {
+
+	  background: whitesmoke;
+	  padding: 30px;
+	  margin-bottom: 100px;
+      }
+
+      .q1 {
+	  display: initial;
+      }
+
+
+
+
     </style>
-
-
   </head>
   <body>
     
@@ -51,72 +121,77 @@
     <!--   <a href="https://kopikupi.ru"> -->
     <!-- 	<img src="https://kopikupi.ru/static/media/logo.25b257c1.svg" title="Потребительская программа «КОПИКУПИ», основанная на технологии совместного накопления. Выгодная альтернатива ипотеке и автокредиту." alt="logo"></a> -->
     <!-- </div> -->
-
+    <div class="choose">
     <h1>Calculator</h1>
 
 
     <ul>
-      <li><a href="#">Property</a></li>
-      <li><a href="#">Automobile</a></li>
+      <li><a href="#">House</a></li>
+      <li><a href="#">Car</a></li>
     </ul>
 
+    </div>
+    
+    <div class="q1">
     <h2>How much money do you need?</h2>
-    <input type="range" id="vol" name="vol" min="0" max="50" value="12345">
+
+    <h3 class="rq1">34534535</h3>
+
+    <form>
+      <input type="range" onclick="myFunction()" id="rq1" value="15">
+
+    </form>
+    <button>Next</button>
+    </div>
+    
+    <div class="q2">
+    <h2>When do you want to get them?</h2>
+
+    <h3 class="rq2">34534535</h3>
+
+    
+    <form>
+      <input type="range" id="rq2" name="vol" min="0" max="50" value="12345">
+
+    </form>
     <button>Next</button>
 
+    </div>
 
+    <div class="sum">
+    <h2>Summary</h2>
 
     <h3>34534535</h3>
-    <p>Summary</p>
+    <p>Money</p>
     <h3>34534535</h3>
     <p>ECUP</p>
     <h3>34534535</h3>
     <p>CUP</p>
     <h3>34534535</h3>
-    <p>MC</p>
+    <p>Member Contribution</p>
     <h3>34534535</h3>
     <p>Every month contribution</p>
 
-      <small class="text-muted"><span class="badge badge-secondary">КУП</span> — коэффициент участия Пайщика</small>
-      <hr>
-      <h2 class="display-4 mb-0">55 000,00</h2>
-      <small class="text-muted"><span class="badge badge-secondary">ЧВ</span> — членский взнос</small>
-      <hr>
-      <h2 class="display-4 mb-0">13 750,00</h2>
-      <small class="text-muted">Ежемесячный взнос</small>
+    <button>Back</button>
     </div>
-</div>
-</div>
 
-<div class="col-md">
-  <div class="card border-secondary mb-3">
-    <div class="card-header">Исходные данные</div>
-    <div class="card-body text-secondary">
-
-      <form>
-	<div class="form-group">
-	  <label for="formGroupExampleInput">Сумма займа</label>
-	  <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Рубли">
-	</div>
-
-	<div class="form-group">
-	  <label for="formGroupExampleInput">Срок займа</label>
-	  <input type="month" class="form-control" id="formGroupExampleInput" placeholder="Месяцы">
-	</div>
-
-	<div class="form-group">
-	  <label for="formGroupExampleInput2">Узнать КУПы и ЕКУПы на:</label>
-	  <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Дата">
-	</div>
-
-	<label for="formGroupExampleInput2">Транзакции <span class="badge badge-secondary align-top">Кол-во дней: 252</span></label>
+    
+    <div class="set" ><a href="#">Settings</a></div>
 
 	
-      </form>
 
 
       
       <script>
+
+	function myFunction() {
+
+	let x = document.querySelector('#rq1').value
+	console.log(x);
+
+	document.querySelector('.rq1').innerHTML = x;
+
+	}
 
 	// setTimeout(() => {
 	// 	document.getElementById('splash').classList.add('fade');

@@ -177,7 +177,7 @@
 	     id="rq1" min="1000" max="500000" value="10000">
 
     </form>
-    <button>Next</button>
+    <button onclick="goNext()">Next</button>
     </div>
     
     <div class="q2">
@@ -221,9 +221,7 @@
       <script>
 
 	document.querySelector('.rq1').innerHTML = document.querySelector('#rq1').value;
-	
 	document.querySelector('input').value = document.querySelector('#rq1').value;
-
 	document.querySelector('#rq1').step = '100';
 	
 	function myFunction() {
@@ -232,10 +230,16 @@
 	    console.log(x);
 	    
 	    
-	    document.querySelector('.rq1').innerHTML = x;
+	    document.querySelector('.rq1').value = x;
 
 	}
 
+	const goNext = () => {
+	    document.querySelector('.q1').style.display = 'none'
+	    document.querySelector('.q2').style.display = 'initial'
+	    
+	}
+	
 	// setTimeout(() => {
 	// 	document.getElementById('splash').classList.add('fade');
 	// }, 2000);

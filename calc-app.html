@@ -1,21 +1,21 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-
-
+    
     <title>Калькулятор КУП для пайщика</title>
 
     <style>
+
+      body {
+	  font-size: 4vh;
+	  font-family: sans;
+	  padding: 20px;
+      }
+
+
       #splash {
 	  position: absolute;
 	  top: 0;
@@ -34,277 +34,96 @@
       #splash.fade {
 	  opacity: 0;
       }
+      
     </style>
 
 
   </head>
   <body>
+    
+    <!-- <div id="splash"> -->
+    <!--   <img src="https://kopikupi.ru/static/media/logo.25b257c1.svg" title="Потребительская программа «КОПИКУПИ», основанная на технологии совместного накопления. Выгодная альтернатива ипотеке и автокредиту." alt="logo"> -->
+    <!--   <h1>Калькулятор</h1> -->
+    <!-- </div> -->
+    
+    <!-- <div> -->
+      
+    <!--   <a href="https://kopikupi.ru"> -->
+    <!-- 	<img src="https://kopikupi.ru/static/media/logo.25b257c1.svg" title="Потребительская программа «КОПИКУПИ», основанная на технологии совместного накопления. Выгодная альтернатива ипотеке и автокредиту." alt="logo"></a> -->
+    <!-- </div> -->
 
-    <div id="splash">
-      <img src="https://kopikupi.ru/static/media/logo.25b257c1.svg" title="Потребительская программа «КОПИКУПИ», основанная на технологии совместного накопления. Выгодная альтернатива ипотеке и автокредиту." alt="logo">
-      <h4 class="text-white font-weight-light">Калькулятор</h4>
-    </div>  
+    <h1>Calculator</h1>
 
-    <div class="container mt-3">
-      <div class="row">
 
-	<div class="col">
-	<div class="card bg-primary mb-3">
-	  <div class="card-header">
-	    <div class="row align-items-center">
-	      <div class="col">
-		<a href="https://kopikupi.ru">
-		  <img src="https://kopikupi.ru/static/media/logo.25b257c1.svg" title="Потребительская программа «КОПИКУПИ», основанная на технологии совместного накопления. Выгодная альтернатива ипотеке и автокредиту." alt="logo"></a>
-	      </div>
-	      <div class="col text-right">
-		<h4 class="text-white font-weight-light">Калькулятор</h4>
-	      </div>
-	    </div>
-	      </div>
-	    </div>
-	  <div class="card border-primary mb-3">
-	    <div class="card-header">
-	    <ul class="nav nav-tabs card-header-tabs">
-	      <li class="nav-item">
-		<a class="nav-link active" href="#">Недвижимость</a>
-	      </li>
-	      <li class="nav-item">
-		<a class="nav-link" href="#">Автомобиль</a>
-	      </li>
-	    </ul>
-	    </div>
-	    <div class="card-body text-primary">
-	      <h2 class="display-4 mb-0">123 456,78</h2>
-	      <small class="text-muted">Общая сумма накоплений</small>
-	      <hr>
-	      <h2 class="display-4 mb-0">112,50</h2>
-	      <small class="text-muted"><span class="badge badge-secondary">ЕКУП</span> — ежедневный коэффициент участия Пайщика</small>
-	      <hr>
-	      <h2 class="display-4 mb-0">28 350,00</h2>
-	      <small class="text-muted"><span class="badge badge-secondary">КУП</span> — коэффициент участия Пайщика</small>
-	      <hr>
-	      <h2 class="display-4 mb-0">55 000,00</h2>
-	      <small class="text-muted"><span class="badge badge-secondary">ЧВ</span> — членский взнос</small>
-	      <hr>
-	      <h2 class="display-4 mb-0">13 750,00</h2>
-	      <small class="text-muted">Ежемесячный взнос</small>
-	    </div>
-	  </div>
-	</div>
+    <ul>
+      <li><a href="#">Property</a></li>
+      <li><a href="#">Automobile</a></li>
+    </ul>
 
-	<div class="col-md">
-	  <div class="card border-secondary mb-3">
-	    <div class="card-header">Исходные данные</div>
-	    <div class="card-body text-secondary">
-
-	      <form>
-		<div class="form-group">
-		  <label for="formGroupExampleInput">Сумма займа</label>
-		  <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Рубли">
-		</div>
-
-		<div class="form-group">
-		  <label for="formGroupExampleInput">Срок займа</label>
-		  <input type="month" class="form-control" id="formGroupExampleInput" placeholder="Месяцы">
-		</div>
-
-		<div class="form-group">
-		  <label for="formGroupExampleInput2">Узнать КУПы и ЕКУПы на:</label>
-		  <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Дата">
-		</div>
-
-		<label for="formGroupExampleInput2">Транзакции <span class="badge badge-secondary align-top">Кол-во дней: 252</span></label>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		<div class="input-group mb-1">
-		  <div class="input-group-prepend">
-		    <span class="input-group-text">№1</span>
-		  </div>
-		  <input type="number" class="form-control" placeholder="Сумма">
-		  <input type="date" class="form-control" placeholder="Дата">
-		</div>
-
-		
-</form>
+    <h2>How much money do you need?</h2>
+    <input type="range" id="vol" name="vol" min="0" max="50" value="12345">
+    <button>Next</button>
 
 
 
+    <h3>34534535</h3>
+    <p>Summary</p>
+    <h3>34534535</h3>
+    <p>ECUP</p>
+    <h3>34534535</h3>
+    <p>CUP</p>
+    <h3>34534535</h3>
+    <p>MC</p>
+    <h3>34534535</h3>
+    <p>Every month contribution</p>
 
-	  </div>
-	</div>
-      </div>
+      <small class="text-muted"><span class="badge badge-secondary">КУП</span> — коэффициент участия Пайщика</small>
+      <hr>
+      <h2 class="display-4 mb-0">55 000,00</h2>
+      <small class="text-muted"><span class="badge badge-secondary">ЧВ</span> — членский взнос</small>
+      <hr>
+      <h2 class="display-4 mb-0">13 750,00</h2>
+      <small class="text-muted">Ежемесячный взнос</small>
     </div>
 </div>
-    
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
-  <script>
-    setTimeout(() => {
-	document.getElementById('splash').classList.add('fade');
-    }, 2000);
-  </script>
+</div>
+
+<div class="col-md">
+  <div class="card border-secondary mb-3">
+    <div class="card-header">Исходные данные</div>
+    <div class="card-body text-secondary">
+
+      <form>
+	<div class="form-group">
+	  <label for="formGroupExampleInput">Сумма займа</label>
+	  <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Рубли">
+	</div>
+
+	<div class="form-group">
+	  <label for="formGroupExampleInput">Срок займа</label>
+	  <input type="month" class="form-control" id="formGroupExampleInput" placeholder="Месяцы">
+	</div>
+
+	<div class="form-group">
+	  <label for="formGroupExampleInput2">Узнать КУПы и ЕКУПы на:</label>
+	  <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Дата">
+	</div>
+
+	<label for="formGroupExampleInput2">Транзакции <span class="badge badge-secondary align-top">Кол-во дней: 252</span></label>
+
+	
+      </form>
+
+
+      
+      <script>
+
+	// setTimeout(() => {
+	// 	document.getElementById('splash').classList.add('fade');
+	// }, 2000);
+
+      </script>
+
+</body>
 </html>
 

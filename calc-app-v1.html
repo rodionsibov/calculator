@@ -208,15 +208,15 @@
 <div class="sum">
   <h2>Summary</h2>
 
-  <h3>34534535</h3>
+  <h3></h3>
   <p>Money</p>
-  <h3>34534535</h3>
+  <h3></h3>
   <p>ECUP</p>
-  <h3>34534535</h3>
+  <h3></h3>
   <p>CUP</p>
-  <h3>34534535</h3>
+  <h3></h3>
   <p>Member Contribution</p>
-  <h3>34534535</h3>
+  <h3></h3>
   <p>Every month contribution</p>
 
   <button onclick="goBackFirst()">Back</button>
@@ -240,13 +240,19 @@
   document.querySelectorAll('input')[2].value = document.querySelector('#rq2').value;
 
   document.querySelector('#rq1').step = '100';
-  document.querySelector('#rq2').step = '100';
+  document.querySelector('#rq2').step = '1';
 
 
   function myFunction() {
       document.querySelector('.rq1').value = document.querySelector('#rq1').value;
       
       document.querySelector('.rq2').value = document.querySelector('#rq2').value;
+
+
+      let randomSum = document.querySelectorAll('h3');
+      for (let i = 0; i < randomSum.length; i++) {
+      document.querySelectorAll('h3')[i].innerHTML = Math.floor(Math.random() * 1000);
+      }
 
 
   }

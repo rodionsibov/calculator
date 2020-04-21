@@ -188,7 +188,7 @@
 </div>
 
 <div class="q2">
-  <h2>When do you want to get them?</h2>
+  <h2>When do you want to get your money?</h2>
   
   <form onsubmit="return false;"
  	onclick="myFunction()"
@@ -243,13 +243,20 @@
   document.querySelector('#rq2').step = '1';
 
 
+
+      for (let i = 0; i < document.querySelectorAll('h3').length; i++) {
+      document.querySelectorAll('h3')[i].innerHTML = Math.floor(Math.random() * 1000);
+      }
+
+
+
+
   function myFunction() {
       document.querySelector('.rq1').value = document.querySelector('#rq1').value;
-      
       document.querySelector('.rq2').value = document.querySelector('#rq2').value;
 
-
       let randomSum = document.querySelectorAll('h3');
+
       for (let i = 0; i < randomSum.length; i++) {
       document.querySelectorAll('h3')[i].innerHTML = Math.floor(Math.random() * 1000);
       }

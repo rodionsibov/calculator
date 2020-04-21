@@ -60,17 +60,22 @@
       button {
 	  margin: 30px 0;
 	  bottom: 0px;
-	  
+	  color: snow;
 	  padding: 20px 25px;
-	  
+	  background: green;
 	  border: none;
 	  cursor: pointer;
 	  font-size: inherit;
-	  
+	  transition: all 0.2s;
+	  border-radius: 4px;
       }
 
+      button:active {
+	  transform: translateY(2px);
+      }
+      
       button:hover {
-	  filter: brightness(1.02)
+	  filter: brightness(1.2)
       }
       
       form {

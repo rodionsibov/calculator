@@ -58,7 +58,7 @@
 
 
       button {
-	  margin-top: 30px;
+	  margin: 30px 0;
 	  bottom: 0px;
 	  
 	  padding: 20px 25px;
@@ -209,7 +209,7 @@
 
 
 
-	     id="rq2" min="1000" max="500000" value="500">
+	     id="rq2" min="2" max="20" value="10">
     </form>
     <button onclick="goBack()">Back</button>
     <button onclick="goNextLast()">Next</button>
@@ -252,6 +252,7 @@
 	document.querySelectorAll('input')[2].value = document.querySelector('#rq2').value;
 
 	document.querySelector('#rq1').step = '100';
+	document.querySelector('#rq2').step = '100';
 
 
 	function myFunction() {

@@ -149,155 +149,143 @@
   <body>
     
     <!-- <div id="splash"> -->
-    <!--   <img src="https://kopikupi.ru/static/media/logo.25b257c1.svg" title="Потребительская программа «КОПИКУПИ», основанная на технологии совместного накопления. Выгодная альтернатива ипотеке и автокредиту." alt="logo"> -->
-    <!--   <h1>Калькулятор</h1> -->
-    <!-- </div> -->
+      <!--   <img src="https://kopikupi.ru/static/media/logo.25b257c1.svg" title="Потребительская программа «КОПИКУПИ», основанная на технологии совместного накопления. Выгодная альтернатива ипотеке и автокредиту." alt="logo"> -->
+      <!--   <h1>Калькулятор</h1> -->
+      <!-- </div> -->
     
     <!-- <div> -->
       
-    <!--   <a href="https://kopikupi.ru"> -->
-    <!-- 	<img src="https://kopikupi.ru/static/media/logo.25b257c1.svg" title="Потребительская программа «КОПИКУПИ», основанная на технологии совместного накопления. Выгодная альтернатива ипотеке и автокредиту." alt="logo"></a> -->
-    <!-- </div> -->
+      <!--   <a href="https://kopikupi.ru"> -->
+	<!-- 	<img src="https://kopikupi.ru/static/media/logo.25b257c1.svg" title="Потребительская программа «КОПИКУПИ», основанная на технологии совместного накопления. Выгодная альтернатива ипотеке и автокредиту." alt="logo"></a> -->
+      <!-- </div> -->
     <div class="choose">
-    <h1>Calculator<sup>beta</sub></h1>
+      <h1>Calculator<sup>beta</sub></h1>
 
 
-    <ul>
-      <li><a href="#">House</a></li>
-      <li><a href="#">Car</a></li>
-    </ul>
+<ul>
+  <li><a href="#">House</a></li>
+  <li><a href="#">Car</a></li>
+</ul>
 
-    </div>
-    
-    <div class="q1">
-    <h2>How much money do you need?</h2>
+</div>
 
-    <form>
-      <input class="rq1" type="number">
-
-      <input type="range"
-
-
-	     onclick="myFunction()"
-	     ontouchmove="myFunction()"
-	     ontouchstart="myFunction()"
-	     onmousemove="myFunction()"
-
-
-
-
-	     id="rq1" min="1000" max="500000" value="10000">
-
-    </form>
-    <button onclick="goNext()">Next</button>
-    </div>
-    
-    <div class="q2">
-    <h2>When do you want to get them?</h2>
-
-    <form>
-      <input class="rq2" type="number">
-
-      <input type="range"
-
-
-	     onclick="myFunction()"
-	     ontouchmove="myFunction()"
-	     ontouchstart="myFunction()"
-	     onmousemove="myFunction()"
-
-
-
-
-	     id="rq2" min="2" max="20" value="10">
-    </form>
-    <button onclick="goBack()">Back</button>
-    <button onclick="goNextLast()">Next</button>
-
-
-    </div>
-
-    <div class="sum">
-    <h2>Summary</h2>
-
-    <h3>34534535</h3>
-    <p>Money</p>
-    <h3>34534535</h3>
-    <p>ECUP</p>
-    <h3>34534535</h3>
-    <p>CUP</p>
-    <h3>34534535</h3>
-    <p>Member Contribution</p>
-    <h3>34534535</h3>
-    <p>Every month contribution</p>
-
-    <button onclick="goBackFirst()">Back</button>
-
-    </div>
-
-    
-    <div class="set"><a href="#">Settings</a></div>
-
+<div class="q1">
+  <h2>How much money do you need?</h2>
+  
+  <form onsubmit="return false;"
 	
+	onclick="myFunction()"
+	ontouchmove="myFunction()"
+	ontouchstart="myFunction()"
+	onmousemove="myFunction()"
+	>
+    <input class="rq1" type="number">
+    
+    <input type="range" id="rq1" min="1000" max="500000" value="10000">
+    
+  </form>
+  <button onclick="goNext()">Next</button>
+</div>
+
+<div class="q2">
+  <h2>When do you want to get them?</h2>
+  
+  <form onsubmit="return false;"
+ 	onclick="myFunction()"
+	ontouchmove="myFunction()"
+	ontouchstart="myFunction()"
+	onmousemove="myFunction()"
+	>
+    <input class="rq2" type="number">
+
+    <input type="range" id="rq2" min="2" max="20" value="10">
+  </form>
+  <button onclick="goBack()">Back</button>
+  <button onclick="goNextLast()">Next</button>
+
+</div>
+
+<div class="sum">
+  <h2>Summary</h2>
+
+  <h3>34534535</h3>
+  <p>Money</p>
+  <h3>34534535</h3>
+  <p>ECUP</p>
+  <h3>34534535</h3>
+  <p>CUP</p>
+  <h3>34534535</h3>
+  <p>Member Contribution</p>
+  <h3>34534535</h3>
+  <p>Every month contribution</p>
+
+  <button onclick="goBackFirst()">Back</button>
+
+</div>
 
 
+<div class="set"><a href="#">Settings</a></div>
+
+
+
+
+
+<script>
+
+  document.querySelector('.rq1').innerHTML = document.querySelector('#rq1').value;
+  document.querySelectorAll('input')[0].value = document.querySelector('#rq1').value;
+  document.querySelector('#rq1').step = '100';
+  
+  document.querySelector('.rq2').innerHTML = document.querySelector('#rq2').value;
+  document.querySelectorAll('input')[2].value = document.querySelector('#rq2').value;
+
+  document.querySelector('#rq1').step = '100';
+  document.querySelector('#rq2').step = '100';
+
+
+  function myFunction() {
+      document.querySelector('.rq1').value = document.querySelector('#rq1').value;
       
-      <script>
-
-	document.querySelector('.rq1').innerHTML = document.querySelector('#rq1').value;
-	document.querySelectorAll('input')[0].value = document.querySelector('#rq1').value;
-	document.querySelector('#rq1').step = '100';
-	
-	document.querySelector('.rq2').innerHTML = document.querySelector('#rq2').value;
-	document.querySelectorAll('input')[2].value = document.querySelector('#rq2').value;
-
-	document.querySelector('#rq1').step = '100';
-	document.querySelector('#rq2').step = '100';
+      document.querySelector('.rq2').value = document.querySelector('#rq2').value;
 
 
-	function myFunction() {
-	    document.querySelector('.rq1').value = document.querySelector('#rq1').value;
-	    
-	    document.querySelector('.rq2').value = document.querySelector('#rq2').value;
-
-
-	}
+  }
 
 
 
 
 
-	
+  
 
-	const goBack = () => {
-	    document.querySelector('.q2').style.display = 'none'
-	    document.querySelector('.q1').style.display = 'initial'
-	    
-	}
-	
-	const goBackFirst = () => {
-	    document.querySelector('.sum').style.display = 'none'
-	    document.querySelector('.q1').style.display = 'initial'
-	    
-	}
-	const goNextLast = () => {
-	    document.querySelector('.q2').style.display = 'none'
-	    document.querySelector('.sum').style.display = 'initial'
-	    
-	}
+  const goBack = () => {
+      document.querySelector('.q2').style.display = 'none'
+      document.querySelector('.q1').style.display = 'initial'
+      
+  }
+  
+  const goBackFirst = () => {
+      document.querySelector('.sum').style.display = 'none'
+      document.querySelector('.q1').style.display = 'initial'
+      
+  }
+  const goNextLast = () => {
+      document.querySelector('.q2').style.display = 'none'
+      document.querySelector('.sum').style.display = 'initial'
+      
+  }
 
-	
-	const goNext = () => {
-	    document.querySelector('.q1').style.display = 'none'
-	    document.querySelector('.q2').style.display = 'initial'
-	    
-	}
-	
-	// setTimeout(() => {
-	// 	document.getElementById('splash').classList.add('fade');
-	// }, 2000);
+  
+  const goNext = () => {
+      document.querySelector('.q1').style.display = 'none'
+      document.querySelector('.q2').style.display = 'initial'
+      
+  }
+  
+  // setTimeout(() => {
+  // 	document.getElementById('splash').classList.add('fade');
+  // }, 2000);
 
-      </script>
+</script>
 
 </body>
 </html>

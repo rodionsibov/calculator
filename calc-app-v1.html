@@ -124,6 +124,20 @@
 	  margin: 50px 0 50px 0;
       }
 
+
+      h2, h3, input, body {
+	  opacity: 0;
+	  animation: anim 1s both;
+	  
+      }
+      
+
+      @keyframes anim {
+	  to {
+	      opacity: 1;
+	  }
+      }
+
       .q1 {
 	  display: initial;
       }
@@ -132,6 +146,7 @@
 	  display: none;
       }
 
+      
       .sum {
 	  display: none;
       }
@@ -260,6 +275,8 @@
       document.querySelector('.rq1').value = document.querySelector('#rq1').value;
       document.querySelector('.rq2').value = document.querySelector('#rq2').value;
 
+
+      
       let randomSum = document.querySelectorAll('h3');
 
       for (let i = 0; i < randomSum.length; i++) {

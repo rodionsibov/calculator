@@ -14,114 +14,214 @@
 
       * {
 	  margin: 0;
+	  box-sizing: border-box;
       }
       
+      
       body {
+	  color: #555;
 	  font-size: 12px;
 	  width: 90%;
 	  margin: 30px auto;
 	  display: flex;
-
 	  font-family: 'Roboto', sans-serif;
+	  flex-wrap: wrap;
+      }
+
+      @media (max-width: 1100px) {
+
 	  
+      	  .grow25, .grow15, .grow45 {
+      	      min-width: 60%;
+	      margin: 0 auto;
+      	  }
+      }
+      
+      @media (max-width: 600px) {
+
+	  
+      	  .grow25, .grow15, .grow45 {
+      	      min-width: 100%;
+      	  }
       }
 
+      button {
+	  background: #85a392;
+	  width: 80%;
+	  padding: 10px;
+	  margin: 5px auto;
+	  border: none;
+	  color: snow;
+
+	  font-family: inherit;
+	  border-radius: 3px;
+      }
+
+      button:hover {
+	  filter: brightness(110%);
+      }
+
+      button:active {
+	  transform: translateY(1px);
+      }
+      
       .col {
-
+	  
 	  width: 100%;
-	  border: 1px solid aqua;
+
+	  padding: 10px;
+
       }
 
-      .row {
-	  border: 1px solid magenta;
+      .grow25 {
+      	  width: 25%;
       }
 
+      .grow15 {
+      	  width: 15%;
+      }
+
+      .grow45 {
+      	  width: 45%;
+	  text-align: center;
+      }
+      
       h1 {
 	  font-size: 16px;
-	  margin-bottom: 10px;
+	  margin: 20px auto 10px;
+      }
+
+      h1:hover {
+	  color: black;
       }
 
       p {
 	  margin-bottom: 10px;
-	  
+
       }
 
-      table, td, th {
-	  border: 1px solid black;
+      p:hover {
+	  color: black;
+      }
+
+      caption {
+	  text-transform: uppercase;
+	  color: black;
+	  background: #fdd998;
+	  padding: 10px;
+	  border-top-left-radius: 5px;
+	  border-top-right-radius: 5px;
+	  border-bottom: 2px solid orange;
+      }
+
+      table {
+	  padding: 10px;
+	  margin-bottom: 20px;
 	  width: 100%;
+	  border-bottom-left-radius: 5px;
+	  border-bottom-right-radius: 5px;
+	  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+	  transition: all 0.1s;
+
       }
 
-      td, caption {
-	  
+      td:hover, th:hover, caption:hover {
+	  font-weight: bold;
+	  color: black;
       }
 
+      table:hover {
+	  transform: scale(1.01);
+	  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);        
+
+      }
+
+      tr:nth-child(even) {
+	  background: whitesmoke;
+      }
+
+      tr:hover {
+	  background: #ffecc7;
+      }
+      
+      td, th {
+	  padding: 5px;
+      }
+
+      .grow25 th {
+	  text-align: right;
+      }
+      
       input {
-	  border: none;
 	  width: 100%;
+	  border: none;
+	  background: none;
       }
+
+      input
+
     </style>
   </head>
   <body>
 
-    <div class="col">
-      <div class="row">
-	<table>
-	  <caption>Исходные данные</caption>
-	  <tr>
-	    <td>Сумма займа, руб.</td>
-	    <td>
-	      <input type="number" value="25000000">
-	    </td>
-	  </tr>
-	  <tr>
-	    <td>Срок займа, мес.</td>
-	    <td>48</td>
-	  </tr>
-	  <tr>
-	    <td>Узнать КУПы и ЕКУПы на:</td>
-	    <td>23.04.2020</td>
-	  </tr>
+    <div class="col grow25">
 
-	</table>
-	    
-      </div>
-      <div class="row">
-	<table>
-	  <caption>Результаты расчета</caption>
-	  <tr>
-	    <th>Общая сумма накоплений</th>
-	    <td>13 000,00</td>
-	  </tr>
-	  <tr>
-	    <th>ЕКУП</th>
-	    <td>10,83</td>
-	  </tr>
-	  <tr>
-	    <th>КУП</th>
-	    <td>6446,25</td>
-	  </tr>
-	  <tr>
-	    <th>ЧВ</th>
-	    <td>19 908,00</td>
-	  </tr>
-	  <tr>
-	    <th>Ежемесячный платеж в мес.</th>
-	    <td>4 937,50</td>
-	  </tr>
-	  
-	</table>
-      </div>
-      <div class="row">
-	<h1>Instruction</h1>
-	<p>1. Выбирете вкладку, соответствующую Вашей программ,е по которой хотите произвести расчет. (Недвижимость, Автомобиль)</p>
-	<p>2. Необходимо скачать калькулятор для дальнейшей работы: Файл - скачать (выбрать формат excel). </p>
-	<p>3. Откройте сохраненный файл на своем компьютере, заполните графы с исходными данными (сумма займа, срок займа, дату на которую производите расчет). Например: </p>
-	<p>4. Укажите сумму и дату каждого внесения денежных средств в программу (транзакции). Например:</p>
-	<p>5. На основании внесенных данных в левой части экрана производится расчет (общая сумма вложений, ЕКУП-ежедневный коэффициент участия пайщика, КУП- коэффициент участия пайщика, ЧВ-членский взнос, ежемесячный взнос).</p>
-      </div>
-    </div>
-    <div class="col">
       <table>
+	<caption>Исходные данные</caption>
+	<tr>
+	  <th><label for="sum">Сумма займа, руб.</label></th>
+	  <td>
+	    <input id="sum" type="number" required step="1000" value="25000000">
+	  </td>
+	</tr>
+	<tr>
+	  <th><label for="month">Срок займа, мес.</th>
+	  <td>
+	    <input type="number" id="month" min="1" max="120" value="48">
+	  </td>
+	</tr>
+	<tr>
+	  <th><label for="date">Узнать КУПы и ЕКУПы на:</label></th>
+	  <td>
+	    <input id="date" type="date">
+	  </td>
+	</tr>
+
+      </table>
+      
+
+      <table>
+	<caption>Результаты расчета</caption>
+	<tr>
+	  <th>Общая сумма накоплений</th>
+	  <td>13 000,00</td>
+	</tr>
+	<tr>
+	  <th>ЕКУП</th>
+	  <td>10,83</td>
+	</tr>
+	<tr>
+	  <th>КУП</th>
+	  <td>6446,25</td>
+	</tr>
+	<tr>
+	  <th>ЧВ</th>
+	  <td>19 908,00</td>
+	</tr>
+	<tr>
+	  <th>Ежемесячный платеж в мес.</th>
+	  <td>4 937,50</td>
+	</tr>
+	
+      </table>
+
+      <h1>Инструкция</h1>
+      <p>Заполните графы с исходными данными (сумма займа, срок займа, дату на которую производите расчет).</p>
+      <p>Укажите сумму и дату каждого внесения денежных средств в программу (транзакции). </p>
+      <p> На основании внесенных данных производится расчет (общая сумма вложений, ЕКУП-ежедневный коэффициент участия пайщика, КУП- коэффициент участия пайщика, ЧВ-членский взнос, ежемесячный взнос).</p>
+    </div>
+    <div class="col grow45">
+      <table id="tab-tra">
 	<caption>Транзакции</caption>
 	<tr>
 	  <th>Транзакции</th>
@@ -136,14 +236,86 @@
 	  <td>208</td>
 	</tr>
       </table>
-	
-	  
+
+      <button id="btn-append">Добавить новую транзакцию</button>
+      <button id="btn-remove">Удалить последнюю транзакцию</button>
+      
     </div>
-    <div class="col"></div>
-    <div class="col"></div>
+    <div class="col grow15">
+      <table id="tab-cup">
+	<caption>КУП</caption>
+	<tr>
+	  <th>КУП</th>
+	  <th>Значение</th>
+	</tr>
+	<tr>
+	  <td>КУП 1</td>
+	  <td>86,67</td>
+	</tr>
+      </table>
+
+    </div>
+    <div class="col grow15">
+      <table id="tab-ecup">
+	<caption>ЕКУП</caption>
+	<tr>
+	  <th>ЕКУП</th>
+	  <th>Значение</th>
+	</tr>
+	<tr>
+	  <td>ЕКУП 1</td>
+	  <td>0,42</td>
+	</tr>
+      </table>
+
+    </div>
     
     <script>
-    </script>
+      
+      let buttonAppend = document.querySelector('#btn-append')
+      let buttonRemove = document.querySelector('#btn-remove')
+      
+      
+      const append = () => {
+	  
+	  let tr1 = document.createElement('tr')
+	  let tr2 = document.createElement('tr')
+	  let tr3 = document.createElement('tr')
+
+	  tr1.innerHTML = '<td>Транзакция №1</td><td>500</td><td>28.09.2019</td><td>208</td></tr>'
+	  tr2.innerHTML = '<td>КУП 1</td><td>86,67</td>'
+	  tr3.innerHTML = '<td>ЕКУП 1</td><td>0,42</td>'
+
+	  document.querySelector('#tab-tra').appendChild(tr1)
+	  document.querySelector('#tab-cup').appendChild(tr2)
+	  document.querySelector('#tab-ecup').appendChild(tr3)
+
+
+      }
+      
+      buttonAppend.addEventListener('click', append)
+
+      const remove = () => {
+	  
+	  let tr1 = document.createEl('tr')
+	  let tr2 = document.createElement('tr')
+	  let tr3 = document.createElement('tr')
+
+	  document.querySelector('#tab-tra').removeChild(tr1)
+	  document.querySelector('#tab-cup').removeChild(tr2)
+	  document.querySelector('#tab-ecup').removeChild(tr3)
+
+	  
+
+      }
+
+
+      buttonRemove.addEventListener('click', remove)
+      
+      
+
+
+				     </script>
   </body>
 </html>
 

@@ -17,22 +17,130 @@
       }
       
       body {
+	  font-size: 12px;
+	  width: 90%;
+	  margin: 30px auto;
 	  display: flex;
-	  
+
 	  font-family: 'Roboto', sans-serif;
+	  
       }
 
-      .contaimer {
+      .col {
+
+	  width: 100%;
 	  border: 1px solid aqua;
+      }
+
+      .row {
+	  border: 1px solid magenta;
+      }
+
+      h1 {
+	  font-size: 16px;
+	  margin-bottom: 10px;
+      }
+
+      p {
+	  margin-bottom: 10px;
+	  
+      }
+
+      table, td, th {
+	  border: 1px solid black;
+	  width: 100%;
+      }
+
+      td, caption {
+	  
+      }
+
+      input {
+	  border: none;
+	  width: 100%;
       }
     </style>
   </head>
   <body>
 
-    <div class="container"></div>
-    <div class="container"></div>
-    <div class="container"></div>
-    <div class="container"></div>
+    <div class="col">
+      <div class="row">
+	<table>
+	  <caption>Исходные данные</caption>
+	  <tr>
+	    <td>Сумма займа, руб.</td>
+	    <td>
+	      <input type="number" value="25000000">
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>Срок займа, мес.</td>
+	    <td>48</td>
+	  </tr>
+	  <tr>
+	    <td>Узнать КУПы и ЕКУПы на:</td>
+	    <td>23.04.2020</td>
+	  </tr>
+
+	</table>
+	    
+      </div>
+      <div class="row">
+	<table>
+	  <caption>Результаты расчета</caption>
+	  <tr>
+	    <th>Общая сумма накоплений</th>
+	    <td>13 000,00</td>
+	  </tr>
+	  <tr>
+	    <th>ЕКУП</th>
+	    <td>10,83</td>
+	  </tr>
+	  <tr>
+	    <th>КУП</th>
+	    <td>6446,25</td>
+	  </tr>
+	  <tr>
+	    <th>ЧВ</th>
+	    <td>19 908,00</td>
+	  </tr>
+	  <tr>
+	    <th>Ежемесячный платеж в мес.</th>
+	    <td>4 937,50</td>
+	  </tr>
+	  
+	</table>
+      </div>
+      <div class="row">
+	<h1>Instruction</h1>
+	<p>1. Выбирете вкладку, соответствующую Вашей программ,е по которой хотите произвести расчет. (Недвижимость, Автомобиль)</p>
+	<p>2. Необходимо скачать калькулятор для дальнейшей работы: Файл - скачать (выбрать формат excel). </p>
+	<p>3. Откройте сохраненный файл на своем компьютере, заполните графы с исходными данными (сумма займа, срок займа, дату на которую производите расчет). Например: </p>
+	<p>4. Укажите сумму и дату каждого внесения денежных средств в программу (транзакции). Например:</p>
+	<p>5. На основании внесенных данных в левой части экрана производится расчет (общая сумма вложений, ЕКУП-ежедневный коэффициент участия пайщика, КУП- коэффициент участия пайщика, ЧВ-членский взнос, ежемесячный взнос).</p>
+      </div>
+    </div>
+    <div class="col">
+      <table>
+	<caption>Транзакции</caption>
+	<tr>
+	  <th>Транзакции</th>
+	  <th>Сумма</th>
+	  <th>Дата</th>
+	  <th>Кол-во дней</th>
+	</tr>
+	<tr>
+	  <td>Транзакция №1</td>
+	  <td>500</td>
+	  <td>28.09.2019</td>
+	  <td>208</td>
+	</tr>
+      </table>
+	
+	  
+    </div>
+    <div class="col"></div>
+    <div class="col"></div>
     
     <script>
     </script>

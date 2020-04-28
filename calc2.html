@@ -315,22 +315,19 @@
       
       const append = () => {
 	  
-	  let tr1 = document.createElement('tr')
-	  let tr2 = document.createElement('tr')
-	  let tr3 = document.createElement('tr')
+	  let table = document.querySelector('#tab-tra');
+	  let row = table.insertRow(1);
+	  let cell1 = row.insertCell(0);
+	  let cell2 = row.insertCell(1);
+	  let cell3 = row.insertCell(2);
+	  let cell4 = row.insertCell(3);
+
+	  cell1.innerHTML = 'Транзакция №1';
+	  cell2.innerHTML = '<input id="sum" type="number" step="10" value="500">';
+	  cell3.innerHTML = '<input id="date" type="date">';
+	  cell4.innerHTML = '208';
 
 	  
-	  tr1.innerHTML = `<td>Транзакция №1</td>
-	  <td><input id="sum" type="number" step="10" value="500"></td>
-	  <td><input id="date" type="date"></td>
-	  <td>208</td>
-`
-	  tr2.innerHTML = `<td>КУП 1</td><td>86,67</td>`
-	  tr3.innerHTML = `<td>ЕКУП 1</td><td>0,42</td>`
-
-	  document.querySelector('#tab-tra').appendChild(tr1)
-	  document.querySelector('#tab-cup').appendChild(tr2)
-	  document.querySelector('#tab-ecup').appendChild(tr3)
 
 
       }
@@ -338,26 +335,19 @@
       buttonAppend.addEventListener('click', append)
 
       const remove = () => {
-	  let tr1 = document.querySelector('#tab-tra tr:last-child')
-	  let tr2 = document.querySelector('#tab-cup tr:last-child')
-	  let tr3 = document.querySelector('#tab-ecup tr:last-child')
 
+
+	  
 	  let trQ = document.querySelectorAll('#tab-tra tr').length
 
-	  if (trQ === 1) {
-	  console.log('finish')	      
-	  } else {
-	  tr1.remove()
-	  tr2.remove()
-	  tr3.remove()
-	      
-	  }
+	  trQ > 3 ? document.querySelector('#tab-tra').deleteRow(1) : console.log('stop') 
 
-	  	  
+	     	  	  
       }
 
       buttonRemove.addEventListener('click', remove)
       
+
       
 
 

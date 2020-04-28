@@ -316,33 +316,29 @@
       const append = () => {
 	  
 	  let table = document.querySelector('#tab-tra');
-	  let row = table.insertRow(1);
+	  let rowCount = table.rows.length;
+	  let row = table.insertRow(rowCount - 1);
 	  let cell1 = row.insertCell(0);
 	  let cell2 = row.insertCell(1);
 	  let cell3 = row.insertCell(2);
 	  let cell4 = row.insertCell(3);
 
+	  
+	  
 	  cell1.innerHTML = 'Транзакция №1';
 	  cell2.innerHTML = '<input id="sum" type="number" step="10" value="500">';
 	  cell3.innerHTML = '<input id="date" type="date">';
 	  cell4.innerHTML = '208';
-
-	  
-
-
       }
       
       buttonAppend.addEventListener('click', append)
 
+
+
       const remove = () => {
-
-
-	  
-	  let trQ = document.querySelectorAll('#tab-tra tr').length
-
-	  trQ > 3 ? document.querySelector('#tab-tra').deleteRow(1) : console.log('stop') 
-
-	     	  	  
+	  document.querySelectorAll('#tab-tra tr').length > 3
+	      ? document.querySelector('#tab-tra').deleteRow(1)
+	      : console.log('stop') 
       }
 
       buttonRemove.addEventListener('click', remove)

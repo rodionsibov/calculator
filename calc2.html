@@ -47,7 +47,7 @@
       @media (max-width: 1100px) {
 
 	  
-      	  .grow-sum, .grow-cup, .grow-transact {
+      	  .grow-sum, .grow-transact {
       	      min-width: 60%;
 	      margin: 0 auto;
       	  }
@@ -56,7 +56,7 @@
       @media (max-width: 600px) {
 
 	  
-      	  .grow-sum, .grow-cup, .grow-transact {
+      	  .grow-sum, .grow-transact {
       	      min-width: 100%;
       	  }
       }
@@ -81,23 +81,18 @@
       }
       
       .col {
-	  
 	  width: 100%;
-
 	  padding: 10px;
-
       }
 
       .grow-sum {
-      	  width: 35%;
+      	  width: 30%;
       }
 
-      .grow-cup {
-      	  width: 15%;
-      }
 
       .grow-transact {
-      	  width: 35%;
+	  overflow: hidden;
+      	  width: 70%;
 	  text-align: center;
       }
       
@@ -166,6 +161,10 @@
 	  background: var(--tr-hover);
       }
       
+      #tab-tra tr:last-child:hover {
+	  background: none;
+      }
+	  
       td, th {
 	  padding: 5px;
       }
@@ -258,53 +257,28 @@
 	  <th>Сумма</th>
 	  <th>Дата</th>
 	  <th>Кол-во дней</th>
+	  <th>КУП</th>
+	  <th>Значение</th>
+	  <th>ЕКУП</th>
+	  <th>Значение</th>
 	</tr>
 	<tr>
 	  <td>Транзакция №1</td>
 	  <td><input id="sum" type="number" step="10" value="500"></td>
 	  <td><input id="date" type="date"></td>
 	  <td>208</td>
-	</tr>
-	<tr>
-	  <td colspan="4">
-	    <button id="btn-append"><span title="Добавить транзакцию" class="material-icons">add</span></button>
-	    <button id="btn-remove"><span title="Удалить транзакцию" class="material-icons">remove</span></button>
-	    
-	  </td>
-	</tr>
-      </table>
-
-      
-      
-      
-    </div>
-    <div class="col grow-cup">
-      <table id="tab-cup">
-	<caption>КУП</caption>
-	<tr>
-	  <th>КУП</th>
-	  <th>Значение</th>
-	</tr>
-	<tr>
 	  <td>КУП 1</td>
 	  <td>86,67</td>
-	</tr>
-      </table>
-
-    </div>
-    <div class="col grow-cup">
-      <table id="tab-ecup">
-	<caption>ЕКУП</caption>
-	<tr>
-	  <th>ЕКУП</th>
-	  <th>Значение</th>
-	</tr>
-	<tr>
 	  <td>ЕКУП 1</td>
 	  <td>0,42</td>
 	</tr>
+	<tr>
+	  <td colspan="8">
+	    <button id="btn-append"><span title="Добавить транзакцию" class="material-icons">add</span></button>
+	    <button id="btn-remove"><span title="Удалить транзакцию" class="material-icons">remove</span></button>
+	  </td>
+	</tr>
       </table>
-
     </div>
     
     <script>
@@ -322,13 +296,21 @@
 	  let cell2 = row.insertCell(1);
 	  let cell3 = row.insertCell(2);
 	  let cell4 = row.insertCell(3);
-
+	  let cell5 = row.insertCell(4);
+	  let cell6 = row.insertCell(5);
+	  let cell7 = row.insertCell(6);
+	  let cell8 = row.insertCell(7);
+	  
 	  
 	  
 	  cell1.innerHTML = 'Транзакция №1';
 	  cell2.innerHTML = '<input id="sum" type="number" step="10" value="500">';
 	  cell3.innerHTML = '<input id="date" type="date">';
 	  cell4.innerHTML = '208';
+	  cell5.innerHTML = 'КУП 1';
+	  cell6.innerHTML = '86,67';
+	  cell7.innerHTML = 'ЕКУП 1';
+	  cell8.innerHTML = '0,42';
       }
       
       buttonAppend.addEventListener('click', append)
@@ -336,8 +318,11 @@
 
 
       const remove = () => {
-	  document.querySelectorAll('#tab-tra tr').length > 3
-	      ? document.querySelector('#tab-tra').deleteRow(1)
+	  let table = document.querySelector('#tab-tra');
+	  let rowCount = table.rows.length;
+
+	  rowCount > 3
+	      ? document.querySelector('#tab-tra').deleteRow(rowCount - 2)
 	      : console.log('stop') 
       }
 

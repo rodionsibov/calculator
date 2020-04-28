@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     
     <title>Calculator for Consumer cooperative of joint savings</title>
@@ -11,7 +12,14 @@
 
       @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+      :root {
+	  --caption: blanchedalmond;
+	  --border-bottom: bisque;
+	  --tr-hover: cornsilk;
+	  
+      }
 
+      
       * {
 	  margin: 0;
 	  box-sizing: border-box;
@@ -24,9 +32,10 @@
       }
       
       body {
+
 	  animation: apear 2s both;
 	  opacity: 0;
-	  color: #555;
+	  color: dimgray;
 	  font-size: 12px;
 	  width: 90%;
 	  margin: 30px auto;
@@ -52,20 +61,19 @@
       	  }
       }
 
+      
       button {
-	  background: #85a392;
-	  width: 80%;
-	  padding: 10px;
-	  margin: 5px auto;
+	  margin-top: 10px;
+	  outline: none;
 	  border: none;
-	  color: snow;
-
-	  font-family: inherit;
-	  border-radius: 3px;
+	  background: none;
+	  transition: all 0.2s;
       }
 
+      
       button:hover {
 	  filter: brightness(110%);
+	  transform: scale(1.1);
       }
 
       button:active {
@@ -115,17 +123,19 @@
       }
 
       caption {
+	  font-weight: bold;
+	  
 	  text-transform: uppercase;
-	  color: black;
-	  background: #fdd998;
+	  background: var(--caption);
 	  padding: 10px;
 	  border-top-left-radius: 5px;
 	  border-top-right-radius: 5px;
-	  border-bottom: 2px solid orange;
+	  border-bottom: 2px solid var(--border-bottom);
       }
 
       
       table {
+
 	  padding: 10px;
 	  margin-bottom: 20px;
 	  width: 100%;
@@ -141,6 +151,7 @@
 	  color: black;
       }
 
+      
       table:hover {
 	  transform: scale(1.01);
 	  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);        
@@ -152,7 +163,7 @@
       }
 
       tr:hover {
-	  background: #ffecc7;
+	  background: var(--tr-hover);
       }
       
       td, th {
@@ -192,7 +203,9 @@
 	  </td>
 	</tr>
 	<tr>
-	  <th><label for="date">Узнать КУПы и ЕКУПы на:</label></th>
+	  <th><label for="date">Узнать <span title="Коэффициент участия пайщика">КУПы</span>
+	      и <span title="Ежедневный коэффициент участия">ЕКУПы</span>
+	      на:</label></th>
 	  <td>
 	    <input id="date" type="date">
 	  </td>
@@ -208,15 +221,21 @@
 	  <td>13 000,00</td>
 	</tr>
 	<tr>
-	  <th>ЕКУП</th>
+	  <th><span title="Ежедневный коэффициент участия пайщика">ЕКУП</span>
+	    
+	  </th>
 	  <td>10,83</td>
 	</tr>
 	<tr>
-	  <th>КУП</th>
+	  <th><span title="Коэффициент участия пайщика">КУП</span>
+	    
+	  </th>
 	  <td>6446,25</td>
 	</tr>
 	<tr>
-	  <th>ЧВ</th>
+	  <th><span title="Членский взнос">ЧВ</span>
+	    
+	  </th>
 	  <td>19 908,00</td>
 	</tr>
 	<tr>
@@ -246,10 +265,17 @@
 	  <td><input id="date" type="date"></td>
 	  <td>208</td>
 	</tr>
+	<tr>
+	  <td colspan="4">
+	    <button id="btn-append"><span title="Добавить транзакцию" class="material-icons">add</span></button>
+	    <button id="btn-remove"><span title="Удалить транзакцию" class="material-icons">remove</span></button>
+	    
+	  </td>
+	</tr>
       </table>
 
-      <button id="btn-append">Добавить новую транзакцию</button>
-      <button id="btn-remove">Удалить последнюю транзакцию</button>
+      
+      
       
     </div>
     <div class="col grow-cup">

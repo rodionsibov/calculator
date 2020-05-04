@@ -216,26 +216,26 @@
 
     <div class="col grow-sum">
 
-      <table>
+      <table id="tab-input">
 	<caption>Исходные данные</caption>
 	<tr>
-	  <th><label for="sum">Сумма займа, руб.</label></th>
+	  <th><label for="input-sum">Сумма займа, руб.</label></th>
 	  <td>
-	    <input id="sum" type="number" step="1000" value="25000000">
+	    <input id="input-sum" type="number" step="1000" value="25000000">
 	  </td>
 	</tr>
 	<tr>
-	  <th><label for="month">Срок займа, мес.</th>
+	  <th><label for="input-term">Срок займа, мес.</th>
 	  <td>
-	    <input type="number" id="month" min="1" max="120" value="48">
+	    <input type="number" id="input-term" min="1" max="120" value="48">
 	  </td>
 	</tr>
 	<tr>
-	  <th><label for="date">Узнать <span title="Коэффициент участия пайщика">КУПы</span>
+	  <th><label for="input-date">Узнать <span title="Коэффициент участия пайщика">КУПы</span>
 	      и <span title="Ежедневный коэффициент участия">ЕКУПы</span>
 	      на:</label></th>
 	  <td>
-	    <input id="date" type="date">
+	    <input id="input-date" type="date">
 	  </td>
 	</tr>
 
@@ -245,30 +245,27 @@
       <table id="tab-result">
 	<caption>Результаты расчета</caption>
 	<tr>
-	  <th id="main-sum">Общая сумма накоплений</th>
-	  <td>13 000,00</td>
+	  <th>Общая сумма накоплений</th>
+	  <td id="result-sum">13 000,00</td>
 	</tr>
 	<tr>
 	  <th><span title="Ежедневный коэффициент участия пайщика">ЕКУП</span>
-	    
 	  </th>
-	  <td>10,83</td>
+	  <td id="result-ecup">10,83</td>
 	</tr>
 	<tr>
 	  <th><span title="Коэффициент участия пайщика">КУП</span>
-	    
 	  </th>
-	  <td>6446,25</td>
+	  <td id="result-cup">6446,25</td>
 	</tr>
 	<tr>
 	  <th><span title="Членский взнос">ЧВ</span>
-	    
 	  </th>
-	  <td>19 908,00</td>
+	  <td id="result-member-contribution">19 908,00</td>
 	</tr>
 	<tr>
 	  <th>Ежемесячный платеж в мес.</th>
-	  <td>4 937,50</td>
+	  <td id="result-mounthly-payment">4 937,50</td>
 	</tr>
 	
       </table>
@@ -333,8 +330,8 @@
 	  
 	  
 	  cell1.innerHTML = 'Транзакция №1';
-	  cell2.innerHTML = '<input id="sum" type="number" step="10" value="500">';
-	  cell3.innerHTML = '<input id="date" type="date">';
+	  cell2.innerHTML = '<input type="number" step="10" value="500">';
+	  cell3.innerHTML = '<input type="date">';
 	  cell4.innerHTML = '208';
 	  cell5.innerHTML = 'КУП 1';
 	  cell6.innerHTML = '86,67';
@@ -359,6 +356,32 @@
       
 
 
+
+      let inputSum = document.querySelector('#input-sum')
+      let inputTerm = document.querySelector('#input-term')
+      let inputDate = document.querySelector('#input-date')
+      let resultSum = document.querySelector('#result-sum')
+      let resultEcup = document.querySelector('#result-ecup')
+      let resultCup = document.querySelector('#result-cup')
+      let resultMc = document.querySelector('#result-member-contribution')
+      let resultMp = document.querySelector('#result-mounthly-payment')
+
+      
+
+      inputSum.oninput = () => {
+      resultMp.innerHTML = inputSum.value
+      }
+
+
+      
+
+
+
+
+
+      
+
+      
       // Store data
       //var someData = 'The data that I want to store for later.';
       //localStorage.setItem('myDataKey', someData);

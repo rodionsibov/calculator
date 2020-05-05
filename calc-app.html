@@ -362,6 +362,13 @@
 		  : cell.value = localStorage.getItem(`date transaction ${i+1}`)	      
 	  }
 
+	  for (let i = 0; i < transactNum; i++) {
+	      let cell = document.getElementsByClassName('day-transact')[i]
+	      localStorage.getItem(`day transaction ${i+1}`) === null
+		  ? localStorage.setItem(`day transaction ${i+1}`, cell.innerHTML)
+		  : cell.innerHTML = localStorage.getItem(`day transaction ${i+1}`)
+	  }
+
 	  localStorage.getItem('result sum') === null
 	      ? localStorage.setItem('result sum', '0')
 	      : resultSum.innerHTML = localStorage.getItem('result sum')
@@ -438,7 +445,9 @@
 	      let cell3 = document.getElementsByClassName('day-transact')[i]
 	      let cell4 = document.getElementsByClassName('cup-transact')[i]
 
-	      cell3.innerHTML = Math.abs(new Date(inputDate.value) - new Date(cell2)) / 86400000
+	      inputDate.value === '' || cell2 === ''
+		  ? console.log('Please, choose the date!')
+		  : cell3.innerHTML = Math.abs(new Date(inputDate.value) - new Date(cell2)) / 86400000
 	      localStorage.setItem(`day transaction ${i+1}`, cell3.innerHTML)
 	      
 	      cell4.innerHTML = Math.round((+cell1 * 10000 * 365) / (+inputSum.value * +inputTerm.value) * 100) / 100

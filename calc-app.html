@@ -246,7 +246,7 @@
 	<caption>Результаты расчета</caption>
 	<tr>
 	  <th>Общая сумма накоплений</th>
-	  <td id="result-sum">13 000,00</td>
+	  <td id="result-sum">0</td>
 	</tr>
 	<tr>
 	  <th><span title="Ежедневный коэффициент участия пайщика">ЕКУП</span>
@@ -308,7 +308,7 @@
 //add table
 
       const table = document.querySelector('#tab-tra');
-      const transactNum = 50
+      const transactNum = 5
       
       for (let i = 0; i < transactNum; i++) {
 
@@ -323,7 +323,7 @@
 	  const cell8 = row.insertCell(7);
 	  
 	  cell1.innerHTML = 'Транзакция №' + Number(i + 1);
-	  cell2.innerHTML = '<input class="sum-transact" type="number" step="10" value="500" min="10">';
+	  cell2.innerHTML = '<input class="sum-transact" type="number" step="10" min="10" value="0">';
 	  cell3.innerHTML = '<input class="date-transact" type="date">';
 	  cell4.innerHTML = '208';
 	  cell5.innerHTML = 'КУП ' + Number(i + 1);
@@ -334,23 +334,43 @@
       }
 
 
+
+      window.onload = () => {
+	  for (let i = 0; i < transactNum; i++) {
+	      let cell = document.getElementsByClassName('sum-transact')[i]
+	      localStorage.getItem(`transaction ${i+1}`) === null
+		  ? localStorage.setItem(`transaction ${i+1}`, cell.value)
+		  : cell.value = localStorage.getItem(`transaction ${i+1}`)	      
+	  }
+
+	  localStorage.getItem('result sum') === null
+	      ? localStorage.setItem('result sum', '0')
+	      : resultSum.innerHTML = localStorage.getItem('result sum')
+
+      }
+
+
       document.oninput = () => {
 	  for (let i = 0; i < transactNum; i++) {
 	      let cell = document.getElementsByClassName('sum-transact')[i].value
 	      localStorage.setItem(`transaction ${i+1}`, cell)
 	  }
-      }
 
-      window.onload = () => {
+	  let sumCells = 0
 	  for (let i = 0; i < transactNum; i++) {
-	      let cell = document.getElementsByClassName('sum-transact')[i]
-	      localStorage.getItem(`transaction ${i+1}`) === ''
-		  ? localStorage.setItem(`transaction ${i+1}`, cell.value)
-		  : cell.value = localStorage.getItem(`transaction ${i+1}`)	      
+	      let cell = document.getElementsByClassName('sum-transact')[i].value
+	      sumCells += +cell
 	  }
+	  resultSum.innerHTML = sumCells
+	  localStorage.setItem('result sum', sumCells)
+
       }
 
 
+
+      
+      
+      
       //localStorage.setItem('myDataKey', someData);
       //var data = localStorage.getItem('myDataKey');
       //localStorage.removeItem('myDatakey');

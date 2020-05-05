@@ -288,68 +288,12 @@
 	  <th>ЕКУП</th>
 	  <th>Значение</th>
 	</tr>
-	<tr>
-	<tr>
-	  <td colspan="8">
-	    <button id="btn-append"><span title="Добавить транзакцию" class="material-icons">add</span></button>
-	    <button id="btn-remove"><span title="Удалить транзакцию" class="material-icons">remove</span></button>
-	  </td>
-	</tr>
+
       </table>
     </div>
     
     <script>
       
-      const buttonAppend = document.querySelector('#btn-append')
-      const buttonRemove = document.querySelector('#btn-remove')
-      
-      
-      const append = () => {
-
-	  const table = document.querySelector('#tab-tra');
-	  const rowCount = table.rows.length;
-	  const row = table.insertRow(rowCount - 1);
-	  const cell1 = row.insertCell(0);
-	  const cell2 = row.insertCell(1);
-	  const cell3 = row.insertCell(2);
-	  const cell4 = row.insertCell(3);
-	  const cell5 = row.insertCell(4);
-	  const cell6 = row.insertCell(5);
-	  const cell7 = row.insertCell(6);
-	  const cell8 = row.insertCell(7);
-	  
-	  
-	  
-	  cell1.innerHTML = 'Транзакция №1';
-	  cell2.innerHTML = '<input class="sum-transact" type="number" step="10" value="500">';
-	  cell3.innerHTML = '<input class="date-transact" type="date">';
-	  cell4.innerHTML = '208';
-	  cell5.innerHTML = 'КУП 1';
-	  cell6.innerHTML = '86,67';
-	  cell7.innerHTML = 'ЕКУП 1';
-	  cell8.innerHTML = '0,42';
-
-	  
-      }
-      
-      buttonAppend.addEventListener('click', append)
-
-
-
-      const remove = () => {
-	  const table = document.querySelector('#tab-tra');
-	  const rowCount = table.rows.length;
-
-	  rowCount > 3
-	      ? document.querySelector('#tab-tra').deleteRow(rowCount - 2)
-	      : console.log('stop') 
-      }
-
-      buttonRemove.addEventListener('click', remove)
-
-
-
-
 
       const inputSum = document.querySelector('#input-sum')
       const inputTerm = document.querySelector('#input-term')
@@ -360,26 +304,51 @@
       const resultMc = document.querySelector('#result-member-contribution')
       const resultMp = document.querySelector('#result-mounthly-payment')
 
-      for (let i = 0; i < 5; i++) {
-	  append()
+
+//add table
+
+      const table = document.querySelector('#tab-tra');
+      const transactNum = 50
+      
+      for (let i = 0; i < transactNum; i++) {
+
+	  const row = table.insertRow();
+	  const cell1 = row.insertCell(0);
+	  const cell2 = row.insertCell(1);
+	  const cell3 = row.insertCell(2);
+	  const cell4 = row.insertCell(3);
+	  const cell5 = row.insertCell(4);
+	  const cell6 = row.insertCell(5);
+	  const cell7 = row.insertCell(6);
+	  const cell8 = row.insertCell(7);
+	  
+	  cell1.innerHTML = 'Транзакция №' + Number(i + 1);
+	  cell2.innerHTML = '<input class="sum-transact" type="number" step="10" value="500" min="10">';
+	  cell3.innerHTML = '<input class="date-transact" type="date">';
+	  cell4.innerHTML = '208';
+	  cell5.innerHTML = 'КУП ' + Number(i + 1);
+	  cell6.innerHTML = '86,67';
+	  cell7.innerHTML = 'ЕКУП ' + Number(i + 1);
+	  cell8.innerHTML = '0,42';
+
       }
 
 
-
       document.oninput = () => {
-	  for (let i = 0; i < 5; i++) {
+	  for (let i = 0; i < transactNum; i++) {
 	      let cell = document.getElementsByClassName('sum-transact')[i].value
-	      localStorage.setItem(`cell${i}`, cell)
+	      localStorage.setItem(`transaction ${i+1}`, cell)
 	  }
       }
 
       window.onload = () => {
-	  for (let i = 0; i < 5; i++) {
+	  for (let i = 0; i < transactNum; i++) {
 	      let cell = document.getElementsByClassName('sum-transact')[i]
-	      cell.value = localStorage.getItem(`cell${i}`)
+	      localStorage.getItem(`transaction ${i+1}`) === ''
+		  ? localStorage.setItem(`transaction ${i+1}`, cell.value)
+		  : cell.value = localStorage.getItem(`transaction ${i+1}`)	      
 	  }
       }
-
 
 
       //localStorage.setItem('myDataKey', someData);

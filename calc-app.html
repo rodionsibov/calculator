@@ -259,7 +259,7 @@
 	<tr>
 	  <th><span title="Коэффициент участия пайщика">КУП</span>
 	  </th>
-	  <td id="result-cup">6446,25</td>
+	  <td id="result-cup">0</td>
 	</tr>
 	<tr>
 	  <th><span title="Членский взнос">ЧВ</span>
@@ -312,7 +312,7 @@
 
       const table = document.querySelector('#tab-tra');
       const transactNum = 5
-      
+
       for (let i = 0; i < transactNum; i++) {
 
 	  const row = table.insertRow();
@@ -324,16 +324,18 @@
 	  const cell6 = row.insertCell(5);
 	  const cell7 = row.insertCell(6);
 	  const cell8 = row.insertCell(7);
+
 	  
 	  cell1.innerHTML = 'Транзакция №' + Number(i + 1);
 	  cell2.innerHTML = '<input class="sum-transact" type="number" step="10" min="10" value="0">';
 	  cell3.innerHTML = '<input class="date-transact" type="date">';
 	  cell4.innerHTML = '208';
 	  cell5.innerHTML = 'КУП ' + Number(i + 1);
-	  cell6.innerHTML = '86,67';
+	  cell6.innerHTML = '<span class="cup-transact">0</span>';
 	  cell7.innerHTML = 'ЕКУП ' + Number(i + 1);
-	  cell8.innerHTML = '0,42';
+	  cell8.innerHTML = '<span class="ecup-transact">0</span>';
 
+	  
       }
 
 
@@ -344,6 +346,20 @@
 	      localStorage.getItem(`transaction ${i+1}`) === null
 		  ? localStorage.setItem(`transaction ${i+1}`, cell.value)
 		  : cell.value = localStorage.getItem(`transaction ${i+1}`)	      
+	  }
+
+	  for (let i = 0; i < transactNum; i++) {
+	      let cell2 = document.getElementsByClassName('cup-transact')[i]
+	      localStorage.getItem(`cup ${i+1}`) === null
+		  ? localStorage.setItem(`cup ${i+1}`, cell2.innerHTML)
+		  : cell2.innerHTML = localStorage.getItem(`cup ${i+1}`)	      
+	  }
+
+	  for (let i = 0; i < transactNum; i++) {
+	      let cell = document.getElementsByClassName('date-transact')[i]
+	      localStorage.getItem(`date transaction ${i+1}`) === null
+		  ? localStorage.setItem(`date transaction ${i+1}`, cell.value)
+		  : cell.value = localStorage.getItem(`date transaction ${i+1}`)	      
 	  }
 
 	  localStorage.getItem('result sum') === null
@@ -369,6 +385,10 @@
 	  localStorage.getItem('result member contribution') === null
 	      ? localStorage.setItem('result member contribution', resultMc.innerHTML)
 	      : resultMc.innerHTML = localStorage.getItem('result member contribution')
+
+	  localStorage.getItem('result cup') === null
+	      ? localStorage.setItem('result cup', resultCup.innerHTML)
+	      : resultCup.innerHTML = localStorage.getItem('result cup')
 
       }
 
@@ -398,8 +418,33 @@
 	  localStorage.setItem('result member contribution', resultMc.innerHTML)
 
 
+	  let sumCupCells = 0
+	  for (let i = 0; i < transactNum; i++) {
+	      let cell = document.getElementsByClassName('cup-transact')[i].innerHTML
+	      sumCupCells += +cell
+	  }
+	  resultCup.innerHTML = Math.round(sumCupCells * 100) / 100
+	  localStorage.setItem('result cup', resultCup.innerHTML)
 
 
+	  for (let i = 0; i < transactNum; i++) {
+	      let cell = document.getElementsByClassName('date-transact')[i].value
+	      localStorage.setItem(`date transaction ${i+1}`, cell)
+	  }
+	
+	  
+	  
+	  for (let i = 0; i < transactNum; i++) {
+	      let cell = document.getElementsByClassName('sum-transact')[i].value
+	      let cell2 = document.getElementsByClassName('cup-transact')[i]
+	  
+	      cell2.innerHTML = Math.round((+cell * 10000 * 365) / (+inputSum.value * +inputTerm.value) * 100) / 100
+	      localStorage.setItem(`cup ${i+1}`, cell2.innerHTML)
+	  }
+
+
+
+	  
       }
 
 

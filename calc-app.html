@@ -264,7 +264,7 @@
 	<tr>
 	  <th><span title="Членский взнос">ЧВ</span>
 	  </th>
-	  <td id="result-member-contribution">19 908,00</td>
+	  <td id="result-member-contribution">0</td>
 	</tr>
 	<tr>
 	  <th>Ежемесячный платеж в мес.</th>
@@ -366,6 +366,9 @@
 	      ? localStorage.setItem('result mounthly payment', resultMp.innerHTML)
 	      : resultMp.innerHTML = localStorage.getItem('result mounthly payment')
 
+	  localStorage.getItem('result member contribution') === null
+	      ? localStorage.setItem('result member contribution', resultMc.innerHTML)
+	      : resultMc.innerHTML = localStorage.getItem('result member contribution')
 
       }
 
@@ -390,6 +393,12 @@
 
 	  resultMp.innerHTML = Math.floor((+inputSum.value - +resultSum.innerHTML) / +inputTerm.value)
 	  localStorage.setItem('result mounthly payment', resultMp.innerHTML)
+
+	  resultMc.innerHTML = Math.floor((+inputSum.value - +resultSum.innerHTML) * 0.084)
+	  localStorage.setItem('result member contribution', resultMc.innerHTML)
+
+
+
 
       }
 

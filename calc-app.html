@@ -11,11 +11,12 @@
     <style>
 
       @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
       :root {
-	  --caption: blanchedalmond;
-	  --border-bottom: bisque;
-	  --tr-hover: cornsilk;
+	  --caption: #ffc38b;
+	  --border-bottom: #ff926b;
+	  --tr-hover: #fff3cd;
 	  
       }
 
@@ -25,21 +26,23 @@
 	  box-sizing: border-box;
       }
       
-      @keyframes apear {
+      @keyframes appear {
 	  to {
 	     opacity: 1
 	  }
       }
       
       body {
-	  animation: apear 2s both;
+	  animation: appear 2s both;
 	  opacity: 0;
 	  color: dimgray;
 	  font-size: 12px;
 	  width: 90%;
 	  margin: 30px auto;
 	  display: flex;
-	  font-family: 'Roboto', sans-serif;
+	  /* font-family: 'Roboto', sans-serif; */
+	  font-family: 'Ubuntu', sans-serif;
+
 	  flex-wrap: wrap;
       }
 
@@ -61,23 +64,23 @@
       }
 
       
-      button {
-	  margin-top: 10px;
-	  outline: none;
-	  border: none;
-	  background: none;
-	  transition: all 0.2s;
-      }
+      /* button { */
+      /* 	  margin-top: 10px; */
+      /* 	  outline: none; */
+      /* 	  border: none; */
+      /* 	  background: none; */
+      /* 	  transition: all 0.2s; */
+      /* } */
 
       
-      button:hover {
-	  filter: brightness(110%);
-	  transform: scale(1.1);
-      }
+      /* button:hover { */
+      /* 	  filter: brightness(110%); */
+      /* 	  transform: scale(1.1); */
+      /* } */
 
-      button:active {
-	  transform: translateY(1px);
-      }
+      /* button:active { */
+      /* 	  transform: translateY(1px); */
+      /* } */
       
       .col {
 	  width: 100%;
@@ -96,38 +99,74 @@
       }
       
       h1 {
-	  padding: 0 20px;
+	  text-align: center;
 	  font-size: 16px;
-	  margin: 30px auto 20px;
+	  margin: 40px auto 20px;
       }
 
       h1:hover {
 	  color: black;
       }
 
-      p {
-	  line-height: 1.4;
-	  padding: 0 50px 0 20px;
-	  margin-bottom: 10px;
+      .info {
+	  border: 1px solid #eee;
+	  padding: 30px;
+	  border-radius: 15px;
+	  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+	  transition: all 0.1s;
+      }
+      
+      .info:hover {
+	  transform: scale(1.01);
+	  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);        
 
       }
 
-      p:hover {
+      ul {
+	  padding-left: 20px;
+      }
+      
+      .abbr {
+	  padding: 4px;
+	  background: var(--tr-hover);
+	  border-radius: 4px;
+      }
+      
+      li {
+	  margin-bottom: 10px;
+	  list-style-type: none;
+      }
+
+      p:first-child, p:nth-of-type(2) {
+	  border-bottom: 1px solid #eee;
+      }
+      
+      p {
+	  font-size: 13px;
+	  line-height: 1.4;
+	  margin-bottom: 15px;
+	  padding-bottom: 10px;
+
+      }
+
+      p:hover, li:hover {
 	  color: black;
       }
 
       caption {
 	  font-weight: bold;
-	  
+	  letter-spacing: 1px;
 	  text-transform: uppercase;
-	  background: var(--caption);
+	  background-image: linear-gradient(-1deg, var(--border-bottom) 10%, var(--caption) 20%);
 	  padding: 10px;
 	  border-top-left-radius: 5px;
 	  border-top-right-radius: 5px;
-	  border-bottom: 2px solid var(--border-bottom);
+	  border-bottom: 1px solid var(--border-bottom);
       }
 
       #tab-tra {
+
+	  
 	  padding: 10px;
 	  margin-bottom: 20px;
 	  width: 100%;
@@ -144,6 +183,7 @@
       table:not(#tab-tra) {
 
 	  /* border-spacing: 0; */
+
 
 	  
 	  padding: 10px;
@@ -187,7 +227,7 @@
 
       td, th {
 	  padding: 5px;
-	  width: 100%;
+	  width: 100px;
 		  
 
       }
@@ -196,12 +236,8 @@
 	  text-align: right;
       }
       
-      input[type="date"] {
-	  font-family: inherit;
-      }
-      
       input {
-	  
+	  font-family: inherit;	  
 	  width: 100%;
 	  border: none;
 	  background: none;
@@ -224,13 +260,13 @@
 	<tr>
 	  <th><label for="input-sum">Сумма займа, руб.</label></th>
 	  <td>
-	    <input id="input-sum" type="number" step="1000" value="500000">
+	    <input id="input-sum" type="number" step="1000" value="500000" min="10" required>
 	  </td>
 	</tr>
 	<tr>
 	  <th><label for="input-term">Срок займа, мес.</th>
 	  <td>
-	    <input type="number" id="input-term" min="1" max="120" value="48">
+	    <input type="number" id="input-term" min="1" max="120" value="48" required>
 	  </td>
 	</tr>
 	<tr>
@@ -238,7 +274,7 @@
 	      и <span title="Ежедневный коэффициент участия">ЕКУПы</span>
 	      на:</label></th>
 	  <td>
-	    <input id="input-date" type="date">
+	    <input id="input-date" type="date" required>
 	  </td>
 	</tr>
 
@@ -254,7 +290,7 @@
 	<tr>
 	  <th><span title="Ежедневный коэффициент участия пайщика">ЕКУП</span>
 	  </th>
-	  <td id="result-ecup">10,83</td>
+	  <td id="result-ecup">0</td>
 	</tr>
 	<tr>
 	  <th><span title="Коэффициент участия пайщика">КУП</span>
@@ -274,10 +310,19 @@
       </table>
 
       <h1>Инструкция</h1>
+      <div class="info">
       <p>Заполните графы с исходными данными (сумма займа, срок займа, дату на которую производите расчет).</p>
       <p>Укажите сумму и дату каждого внесения денежных средств в программу "ТРАНЗАКЦИИ". </p>
-      <p> На основании внесенных данных производится расчет (общая сумма вложений, <b>ЕКУП</b> - ежедневный коэффициент участия пайщика, <b>КУП</b> - коэффициент участия пайщика, <b>ЧВ</b> - членский взнос, ежемесячный взнос).</p>
-    </div>
+      <p>На основании внесенных данных производится расчет:</p>
+      <ul>
+	<li><span class="abbr">Общая сумма вложений.</span></li>
+	<li><span class="abbr"><b>ЕКУП</b></span> - ежедневный коэффициент участия пайщика.</li>
+	<li><span class="abbr"><b>КУП</b></span> - коэффициент участия пайщика.</li>
+	<li><span class="abbr"><b>ЧВ</b></span> - членский взнос, ежемесячный взнос).</li>
+      </ul>
+      </div>
+      </div>
+    
     <div class="col grow-transact">
       <table id="tab-tra">
 	<caption>Транзакции</caption>
@@ -311,7 +356,7 @@
 //add table
 
       const table = document.querySelector('#tab-tra');
-      const transactNum = 5
+      const transactNum = 50
 
       for (let i = 0; i < transactNum; i++) {
 
@@ -326,9 +371,10 @@
 	  const cell8 = row.insertCell(7);
 
 	  
-	  cell1.innerHTML = 'Транзакция №' + Number(i + 1);
-	  cell2.innerHTML = '<input class="sum-transact" type="number" step="10" min="10" value="0">';
-	  cell3.innerHTML = '<input class="date-transact" type="date">';
+	  cell1.innerHTML = '<label for="input-sum-transact' + Number(i+1) + '">Транзакция №' + Number(i+1) + '</label>';
+	  cell2.innerHTML = '<input class="sum-transact" id="input-sum-transact' + Number(i+1) + '" type="number" step="10" min="10" value="0" required>';
+	  console.log(cell1.innerHTML)
+	  cell3.innerHTML = '<input class="date-transact" type="date" required>';
 	  cell4.innerHTML = '<span class="day-transact">0</span>';;
 	  cell5.innerHTML = 'КУП ' + Number(i + 1);
 	  cell6.innerHTML = '<span class="cup-transact">0</span>';
@@ -353,6 +399,13 @@
 	      localStorage.getItem(`cup ${i+1}`) === null
 		  ? localStorage.setItem(`cup ${i+1}`, cell.innerHTML)
 		  : cell.innerHTML = localStorage.getItem(`cup ${i+1}`)	      
+	  }
+
+	  for (let i = 0; i < transactNum; i++) {
+	      let cell = document.getElementsByClassName('ecup-transact')[i]
+	      localStorage.getItem(`ecup ${i+1}`) === null
+		  ? localStorage.setItem(`cup ${i+1}`, cell.innerHTML)
+		  : cell.innerHTML = localStorage.getItem(`ecup ${i+1}`)	      
 	  }
 
 	  for (let i = 0; i < transactNum; i++) {
@@ -397,6 +450,10 @@
 	      ? localStorage.setItem('result cup', resultCup.innerHTML)
 	      : resultCup.innerHTML = localStorage.getItem('result cup')
 
+	  localStorage.getItem('result ecup') === null
+	      ? localStorage.setItem('result ecup', resultEcup.innerHTML)
+	      : resultEcup.innerHTML = localStorage.getItem('result ecup')
+
       }
 
 
@@ -433,6 +490,13 @@
 	  resultCup.innerHTML = Math.round(sumCupCells * 100) / 100
 	  localStorage.setItem('result cup', resultCup.innerHTML)
 
+	  let sumEcupCells = 0
+	  for (let i = 0; i < transactNum; i++) {
+	      let cell = document.getElementsByClassName('ecup-transact')[i].innerHTML
+	      sumEcupCells += +cell
+	  }
+	  resultEcup.innerHTML = Math.round(sumEcupCells * 100) / 100
+	  localStorage.setItem('result ecup', resultEcup.innerHTML)
 
 	  for (let i = 0; i < transactNum; i++) {
 	      let cell = document.getElementsByClassName('date-transact')[i].value
@@ -444,19 +508,22 @@
 	      let cell2 = document.getElementsByClassName('date-transact')[i].value
 	      let cell3 = document.getElementsByClassName('day-transact')[i]
 	      let cell4 = document.getElementsByClassName('cup-transact')[i]
+	      let cell5 = document.getElementsByClassName('ecup-transact')[i]
 
 	      inputDate.value === '' || cell2 === ''
 		  ? console.log('Please, choose the date!')
 		  : cell3.innerHTML = Math.abs(new Date(inputDate.value) - new Date(cell2)) / 86400000
 	      localStorage.setItem(`day transaction ${i+1}`, cell3.innerHTML)
 	      
-	      cell4.innerHTML = Math.round((+cell1 * 10000 * 365) / (+inputSum.value * +inputTerm.value) * 100) / 100
+	      cell4.innerHTML = Math.round((+cell1 * 10000 * cell3.innerHTML) / (+inputSum.value * +inputTerm.value) * 100) / 100
 	      localStorage.setItem(`cup ${i+1}`, cell4.innerHTML)
+
+	      cell5.innerHTML = Math.round((+cell1 * 10000) / (+inputSum.value * +inputTerm.value) * 100) / 100
+	      localStorage.setItem(`ecup ${i+1}`, cell5.innerHTML)
+
+
 	  }
 
-	  
-	  
-	  
       }
 
 

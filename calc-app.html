@@ -195,7 +195,10 @@
       .grow-sum th {
 	  text-align: right;
       }
-
+      
+      input[type="date"] {
+	  font-family: inherit;
+      }
       
       input {
 	  
@@ -221,7 +224,7 @@
 	<tr>
 	  <th><label for="input-sum">Сумма займа, руб.</label></th>
 	  <td>
-	    <input id="input-sum" type="number" step="1000" value="25000000">
+	    <input id="input-sum" type="number" step="1000" value="500000">
 	  </td>
 	</tr>
 	<tr>
@@ -265,7 +268,7 @@
 	</tr>
 	<tr>
 	  <th>Ежемесячный платеж в мес.</th>
-	  <td id="result-mounthly-payment">4 937,50</td>
+	  <td id="result-mounthly-payment">0</td>
 	</tr>
 	
       </table>
@@ -347,6 +350,23 @@
 	      ? localStorage.setItem('result sum', '0')
 	      : resultSum.innerHTML = localStorage.getItem('result sum')
 
+	  localStorage.getItem('input sum') === null
+	      ? localStorage.setItem('input sum', inputSum.value)
+	      : inputSum.value = localStorage.getItem('input sum')
+
+	  localStorage.getItem('input term') === null
+	      ? localStorage.setItem('input term', inputTerm.value)
+	      : inputTerm.value = localStorage.getItem('input term')
+	  
+	  localStorage.getItem('input date') === null
+	      ? localStorage.setItem('input date', inputDate.value)
+	      : inputDate.value = localStorage.getItem('input date')
+
+	  localStorage.getItem('result mounthly payment') === null
+	      ? localStorage.setItem('result mounthly payment', resultMp.innerHTML)
+	      : resultMp.innerHTML = localStorage.getItem('result mounthly payment')
+
+
       }
 
 
@@ -363,6 +383,13 @@
 	  }
 	  resultSum.innerHTML = sumCells
 	  localStorage.setItem('result sum', sumCells)
+
+	  localStorage.setItem('input sum', inputSum.value)
+	  localStorage.setItem('input term', inputTerm.value)
+	  localStorage.setItem('input date', inputDate.value)
+
+	  resultMp.innerHTML = Math.floor((+inputSum.value - +resultSum.innerHTML) / +inputTerm.value)
+	  localStorage.setItem('result mounthly payment', resultMp.innerHTML)
 
       }
 

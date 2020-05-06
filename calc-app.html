@@ -30,7 +30,7 @@
       
       @keyframes appear {
 	  to {
-	     opacity: 1
+	      opacity: 1
 	  }
       }
       
@@ -44,8 +44,8 @@
 	  display: flex;
 	  /* font-family: 'Roboto', sans-serif; */
 	  font-family: 'Ubuntu', sans-serif;
-
 	  flex-wrap: wrap;
+	  filter: hue-rotate(0deg);   	 	  
       }
 
       @media (max-width: 1100px) {
@@ -114,19 +114,20 @@
 
 
       .info {
-
-
-	  background-image: linear-gradient(-123deg, #eee 1%, #fff 33%);
+	  background-image: linear-gradient(-137deg, rgba(1,1,1,0.02) 7%, rgba(255,255,255,1) 6%);
 	  padding: 30px;
 	  border-radius: 15px;
 	  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 	  transition: all 0.1s;
+	  position: relative;
+	  
+	  border-top: 2px solid var(--caption);
       }
       
+
       .info:hover {
 	  transform: scale(1.01);
 	  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);        
-
       }
 
       ul {
@@ -188,10 +189,12 @@
 
       }
 
+      
       h1 .material-icons {
 	  font-size: 20px;
 
       }
+
 
       #tab-tra {
 
@@ -249,7 +252,7 @@
       #tab-tra tr:last-child:hover {
 	  background: none;
       }
-	  
+      
       #tab-tra tr:last-child {
 
       }
@@ -257,8 +260,6 @@
       td, th {
 	  padding: 5px;
 	  width: 100px;
-		  
-
       }
 
       .grow-sum th {
@@ -291,7 +292,7 @@
     <div class="col grow-sum">
 
       <table id="tab-input">
-	<caption><span class="material-icons">settings</span> Исходные данные</caption>
+	<caption><span class="material-icons">create</span> Исходные данные</caption>
 	<tr>
 	  <th><label for="input-sum">Сумма займа, руб.</label></th>
 	  <td>
@@ -305,8 +306,8 @@
 	  </td>
 	</tr>
 	<tr>
-	  <th><label for="input-date">Узнать <span title="Коэффициент участия пайщика">КУПы</span>
-	      и <span title="Ежедневный коэффициент участия">ЕКУПы</span>
+	  <th><label for="input-date">Узнать <abbr title="Коэффициент участия пайщика">КУПы</abbr>
+	      и <abbr title="Ежедневный коэффициент участия">ЕКУПы</abbr>
 	      на:</label></th>
 	  <td>
 	    <input id="input-date" type="date" required>
@@ -323,17 +324,17 @@
 	  <td id="result-sum">0</td>
 	</tr>
 	<tr>
-	  <th><span title="Ежедневный коэффициент участия пайщика">ЕКУП</span>
+	  <th><abbr title="Ежедневный коэффициент участия пайщика">ЕКУП</abbr>
 	  </th>
 	  <td id="result-ecup">0</td>
 	</tr>
 	<tr>
-	  <th><span title="Коэффициент участия пайщика">КУП</span>
+	  <th><abbr title="Коэффициент участия пайщика">КУП</abbr>
 	  </th>
 	  <td id="result-cup">0</td>
 	</tr>
 	<tr>
-	  <th><span title="Членский взнос">ЧВ</span>
+	  <th><abbr title="Членский взнос">ЧВ</abbr>
 	  </th>
 	  <td id="result-member-contribution">0</td>
 	</tr>
@@ -346,29 +347,29 @@
 
       <h1>Инструкция <span class="material-icons">help</span></h1>
       <div class="info">
-      <p>Заполните графы с исходными данными (сумма займа, срок займа, дату на которую производите расчет).</p>
-      <p>Укажите сумму и дату каждого внесения денежных средств в программу "ТРАНЗАКЦИИ". </p>
-      <p>На основании внесенных данных производится расчет:</p>
-      <ul>
-	<li><span class="abbr">Общая сумма вложений.</span></li>
-	<li><span class="abbr"><b>ЕКУП</b> - ежедневный коэффициент участия пайщика.</span></li>
-	<li><span class="abbr"><b>КУП</b> - коэффициент участия пайщика.</span></li>
-	<li><span class="abbr"><b>ЧВ</b> - членский взнос, ежемесячный взнос).</span></li>
-      </ul>
+	<p>Заполните графы с исходными данными (сумма займа, срок займа, дату на которую производите расчет).</p>
+	<p>Укажите сумму и дату каждого внесения денежных средств в программу <b>"ТРАНЗАКЦИИ"</b>. </p>
+	<p>На основании внесенных данных производится расчет:</p>
+	<ul>
+	  <li><span class="abbr">Общая сумма вложений.</span></li>
+	  <li><span class="abbr"><b>ЕКУП</b> - ежедневный коэффициент участия пайщика.</span></li>
+	  <li><span class="abbr"><b>КУП</b> - коэффициент участия пайщика.</span></li>
+	  <li><span class="abbr"><b>ЧВ</b> - членский взнос, ежемесячный взнос).</span></li>
+	</ul>
       </div>
-      </div>
+    </div>
     
     <div class="col grow-transact">
       <table id="tab-tra">
-	<caption><span class="material-icons">payment</span> Транзакции</caption>
+	<caption><span class="material-icons">payment</span>Транзакции</caption>
 	<tr>
 	  <th>Транзакции</th>
 	  <th>Сумма</th>
 	  <th>Дата</th>
 	  <th>Кол-во дней</th>
-	  <th>КУП</th>
+	  <th><abbr title="Коэффициент участия пайщика">КУП</abbr></th>
 	  <th>Значение</th>
-	  <th>ЕКУП</th>
+	  <th><abbr title="Ежедневный коэффициент участия пайщика">ЕКУП</abbr></th>
 	  <th>Значение</th>
 	</tr>
 
@@ -391,7 +392,7 @@
       const resultMp = document.querySelector('#result-mounthly-payment')
 
 
-//add table
+      //add table
 
       const table = document.querySelector('#tab-tra');
       const transactNum = 50
@@ -411,7 +412,7 @@
 	  
 	  cell1.innerHTML = '<label for="input-sum-transact' + Number(i+1) + '">Транзакция №' + Number(i+1) + '</label>';
 	  cell2.innerHTML = '<input class="sum-transact" id="input-sum-transact' + Number(i+1) + '" type="number" step="10" min="10" value="0" required>';
-	  console.log(cell1.innerHTML)
+
 	  cell3.innerHTML = '<input class="date-transact" type="date" required>';
 	  cell4.innerHTML = '<span class="day-transact">0</span>';;
 	  cell5.innerHTML = 'КУП ' + Number(i + 1);
@@ -540,7 +541,7 @@
 	      let cell = document.getElementsByClassName('date-transact')[i].value
 	      localStorage.setItem(`date transaction ${i+1}`, cell)
 	  }
-	
+	  
 	  for (let i = 0; i < transactNum; i++) {
 	      let cell1 = document.getElementsByClassName('sum-transact')[i].value
 	      let cell2 = document.getElementsByClassName('date-transact')[i].value
@@ -561,7 +562,7 @@
 
 
 	  }
-
+	  
       }
 
 
@@ -577,8 +578,27 @@
 
       
 
+      
+					   </script>
 
-				     </script>
+    <script>
+
+      console.log("Hi, I’m Rodion. I have a life interest for all things web and developing code. Say Hello!😉")
+      
+      //change color 
+      console.log('Press key "C" to change the color')
+      
+      let i = 0
+      document.onkeydown = () => {
+	  if (event.keyCode == 67) {
+	      document.querySelector('body').style.filter = `hue-rotate(${i+=45}deg)`
+	  } 
+      }
+
+</script>
+
+
+ 
   </body>
 </html>
 

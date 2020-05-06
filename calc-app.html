@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    
     <title>Calculator for Consumer cooperative of joint savings</title>
 
     <style>
 
-      @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+      /* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
       @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
       :root {
@@ -19,12 +19,14 @@
 	  --tr-hover: #fff3cd;
 	  
       }
-
+      
       
       * {
 	  margin: 0;
 	  box-sizing: border-box;
       }
+
+
       
       @keyframes appear {
 	  to {
@@ -99,6 +101,7 @@
       }
       
       h1 {
+	  position: relative;
 	  text-align: center;
 	  font-size: 16px;
 	  margin: 40px auto 20px;
@@ -108,8 +111,12 @@
 	  color: black;
       }
 
+
+
       .info {
-	  border: 1px solid #eee;
+
+
+	  background-image: linear-gradient(-123deg, #eee 1%, #fff 33%);
 	  padding: 30px;
 	  border-radius: 15px;
 	  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
@@ -123,6 +130,7 @@
       }
 
       ul {
+	  font-size: 13px;
 	  padding-left: 20px;
       }
       
@@ -130,11 +138,14 @@
 	  padding: 4px;
 	  background: var(--tr-hover);
 	  border-radius: 4px;
+	  -webkit-box-decoration-break: clone;
+	  line-height: 1.5;
+
       }
       
       li {
 	  margin-bottom: 10px;
-	  list-style-type: none;
+
       }
 
       p:first-child, p:nth-of-type(2) {
@@ -153,15 +164,33 @@
 	  color: black;
       }
 
+
       caption {
+	  transition: all 0.2s;
+	  position: relative;
 	  font-weight: bold;
 	  letter-spacing: 1px;
 	  text-transform: uppercase;
 	  background-image: linear-gradient(-1deg, var(--border-bottom) 10%, var(--caption) 20%);
+
+
 	  padding: 10px;
 	  border-top-left-radius: 5px;
 	  border-top-right-radius: 5px;
 	  border-bottom: 1px solid var(--border-bottom);
+      }
+
+      caption .material-icons {
+	  position: absolute;
+	  top: 5px;
+	  left: 5px;
+	  font-size: 22px;
+
+      }
+
+      h1 .material-icons {
+	  font-size: 20px;
+
       }
 
       #tab-tra {
@@ -249,6 +278,12 @@
 
       }
 
+      footer {
+	  width: 100%;
+	  text-align: center;
+      }
+
+      
     </style>
   </head>
   <body>
@@ -256,7 +291,7 @@
     <div class="col grow-sum">
 
       <table id="tab-input">
-	<caption>Исходные данные</caption>
+	<caption><span class="material-icons">settings</span> Исходные данные</caption>
 	<tr>
 	  <th><label for="input-sum">Сумма займа, руб.</label></th>
 	  <td>
@@ -282,7 +317,7 @@
       
 
       <table id="tab-result">
-	<caption>Результаты расчета</caption>
+	<caption><span class="material-icons">trending_up</span> Результаты расчета</caption>
 	<tr>
 	  <th>Общая сумма накоплений</th>
 	  <td id="result-sum">0</td>
@@ -309,23 +344,23 @@
 	
       </table>
 
-      <h1>Инструкция</h1>
+      <h1>Инструкция <span class="material-icons">help</span></h1>
       <div class="info">
       <p>Заполните графы с исходными данными (сумма займа, срок займа, дату на которую производите расчет).</p>
       <p>Укажите сумму и дату каждого внесения денежных средств в программу "ТРАНЗАКЦИИ". </p>
       <p>На основании внесенных данных производится расчет:</p>
       <ul>
 	<li><span class="abbr">Общая сумма вложений.</span></li>
-	<li><span class="abbr"><b>ЕКУП</b></span> - ежедневный коэффициент участия пайщика.</li>
-	<li><span class="abbr"><b>КУП</b></span> - коэффициент участия пайщика.</li>
-	<li><span class="abbr"><b>ЧВ</b></span> - членский взнос, ежемесячный взнос).</li>
+	<li><span class="abbr"><b>ЕКУП</b> - ежедневный коэффициент участия пайщика.</span></li>
+	<li><span class="abbr"><b>КУП</b> - коэффициент участия пайщика.</span></li>
+	<li><span class="abbr"><b>ЧВ</b> - членский взнос, ежемесячный взнос).</span></li>
       </ul>
       </div>
       </div>
     
     <div class="col grow-transact">
       <table id="tab-tra">
-	<caption>Транзакции</caption>
+	<caption><span class="material-icons">payment</span> Транзакции</caption>
 	<tr>
 	  <th>Транзакции</th>
 	  <th>Сумма</th>
@@ -339,7 +374,10 @@
 
       </table>
     </div>
-    
+
+    <footer>
+      <small>Written, designed, and built by Rodion Sibov, a designer who you can find on <a href="https://github.com/rodionsibov">GitHub </a>, or good old-fashioned <a href="mailto:rodionsibov@gmail.com">Email.</small>
+    </footer>
     <script>
       
 
